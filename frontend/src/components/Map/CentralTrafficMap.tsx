@@ -24,6 +24,7 @@ interface CentralTrafficMapProps {
   selectedHubKey?: string;
   onSelectEntity?: (entity: SelectedMapEntity) => void;
   roadConditions?: Record<string, { status: 'BLOCKED' | 'CONGESTED'; incident_id?: string }>;
+  routeGeoJSON?: any;
 }
 
 const HYDERABAD_CENTER: [number, number] = [78.4350, 17.4200];
@@ -33,7 +34,8 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
   currentRole,
   selectedHubKey,
   onSelectEntity,
-  roadConditions
+  roadConditions,
+  routeGeoJSON
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -305,6 +307,46 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
             10, 6,
             14, 11
           ],
+          'line-opacity': 0.95
+        }
+      });
+
+      // User Dynamic Route Source and Layers
+      map.addSource('user-route-source', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        }
+      });
+
+      map.addLayer({
+        id: 'user-route-glow',
+        type: 'line',
+        source: 'user-route-source',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#06B6D4',
+          'line-width': 10,
+          'line-opacity': 0.6,
+          'line-blur': 4
+        }
+      });
+
+      map.addLayer({
+        id: 'user-route-line',
+        type: 'line',
+        source: 'user-route-source',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#38BDF8',
+          'line-width': 5,
           'line-opacity': 0.95
         }
       });
@@ -594,6 +636,50 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
       });
     }
   }, [selectedHubKey]);
+
+  // Dynamically update Route GeoJSON on map
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const applyRoute = () => {
+      const source = map.getSource('user-route-source') as maplibregl.GeoJSONSource;
+      if (!source) return;
+
+      if (routeGeoJSON && (routeGeoJSON.features?.length > 0 || routeGeoJSON.type === 'Feature')) {
+        const featCollection = routeGeoJSON.type === 'FeatureCollection' 
+          ? routeGeoJSON 
+          : { type: 'FeatureCollection', features: [routeGeoJSON] };
+        source.setData(featCollection);
+
+        // Smoothly fit bounds
+        const coords: [number, number][] = [];
+        featCollection.features.forEach((f: any) => {
+          if (f.geometry?.type === 'LineString') {
+            f.geometry.coordinates.forEach((pt: [number, number]) => coords.push(pt));
+          }
+        });
+
+        if (coords.length > 1) {
+          const bounds = new maplibregl.LngLatBounds();
+          coords.forEach(pt => bounds.extend(pt));
+          map.fitBounds(bounds, {
+            padding: { top: 80, bottom: 80, left: 80, right: 80 },
+            maxZoom: 15,
+            duration: 900
+          });
+        }
+      } else {
+        source.setData({ type: 'FeatureCollection', features: [] });
+      }
+    };
+
+    if (map.isStyleLoaded()) {
+      applyRoute();
+    } else {
+      map.once('load', applyRoute);
+    }
+  }, [routeGeoJSON]);
 
   const handleToggleLayer = (key: keyof LayerVisibilityState) => {
     setLayers(prev => ({ ...prev, [key]: !prev[key] }));
