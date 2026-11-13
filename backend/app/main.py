@@ -1,3 +1,4 @@
+
 """
 UrbanFlow AI - FastAPI Application Server
 Provides REST APIs for:
@@ -10,7 +11,9 @@ Provides REST APIs for:
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from .api.map_routes import router as network_router
+from .api.auth_routes import router as auth_router
 
 app = FastAPI(
     title="UrbanFlow AI Backend API",
@@ -18,17 +21,22 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Enable CORS for frontend Vite development server and production builds
+# Enable CORS for frontend Vite development server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include network router
+# Register existing network and authentication APIs
 app.include_router(network_router)
+app.include_router(auth_router)
+
 
 @app.get("/")
 def root():
@@ -48,6 +56,12 @@ def root():
         }
     }
 
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("backend.app.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run(
+        "app.main:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=True
+    )
