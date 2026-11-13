@@ -1,0 +1,2419 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d19" for="edge" attr.name="geometry_json" attr.type="string" />
+  <key id="d18" for="edge" attr.name="direction" attr.type="string" />
+  <key id="d17" for="edge" attr.name="one_way" attr.type="boolean" />
+  <key id="d16" for="edge" attr.name="base_speed_kmh" attr.type="long" />
+  <key id="d15" for="edge" attr.name="lanes" attr.type="long" />
+  <key id="d14" for="edge" attr.name="length_m" attr.type="double" />
+  <key id="d13" for="edge" attr.name="highway" attr.type="string" />
+  <key id="d12" for="edge" attr.name="osm_way_id" attr.type="string" />
+  <key id="d11" for="edge" attr.name="to_node" attr.type="string" />
+  <key id="d10" for="edge" attr.name="from_node" attr.type="string" />
+  <key id="d9" for="edge" attr.name="name" attr.type="string" />
+  <key id="d8" for="edge" attr.name="id" attr.type="string" />
+  <key id="d7" for="edge" attr.name="key" attr.type="string" />
+  <key id="d6" for="node" attr.name="osm_id" attr.type="string" />
+  <key id="d5" for="node" attr.name="has_signal" attr.type="boolean" />
+  <key id="d4" for="node" attr.name="area" attr.type="string" />
+  <key id="d3" for="node" attr.name="node_type" attr.type="string" />
+  <key id="d2" for="node" attr.name="lon" attr.type="double" />
+  <key id="d1" for="node" attr.name="lat" attr.type="double" />
+  <key id="d0" for="node" attr.name="name" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="node_cyber_towers">
+      <data key="d0">Cyber Towers Junction</data>
+      <data key="d1">17.45041</data>
+      <data key="d2">78.38082</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Hitech City</data>
+      <data key="d5">True</data>
+      <data key="d6">49201948</data>
+    </node>
+    <node id="node_hitex_entry">
+      <data key="d0">HITEX Exhibition Entry</data>
+      <data key="d1">17.4682</data>
+      <data key="d2">78.3752</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Hitech City</data>
+      <data key="d5">False</data>
+      <data key="d6">49201949</data>
+    </node>
+    <node id="node_kothaguda">
+      <data key="d0">Kothaguda X Roads</data>
+      <data key="d1">17.45821</data>
+      <data key="d2">78.36122</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Hitech City / Kondapur</data>
+      <data key="d5">True</data>
+      <data key="d6">11301915</data>
+    </node>
+    <node id="node_hitech_station">
+      <data key="d0">Hitech City MMTS Station X Roads</data>
+      <data key="d1">17.4721</data>
+      <data key="d2">78.3882</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Hitech City</data>
+      <data key="d5">False</data>
+      <data key="d6">49201951</data>
+    </node>
+    <node id="node_mindspace">
+      <data key="d0">Mindspace Rotary Junction</data>
+      <data key="d1">17.44121</data>
+      <data key="d2">78.38122</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Madhapur / Mindspace</data>
+      <data key="d5">True</data>
+      <data key="d6">10301904</data>
+    </node>
+    <node id="node_inorbit_mall">
+      <data key="d0">Inorbit Mall Road Junction</data>
+      <data key="d1">17.4335</data>
+      <data key="d2">78.3862</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Madhapur</data>
+      <data key="d5">False</data>
+      <data key="d6">49201953</data>
+    </node>
+    <node id="node_durgam_cheruvu_west">
+      <data key="d0">Durgam Cheruvu Cable Bridge West Entry</data>
+      <data key="d1">17.4302</data>
+      <data key="d2">78.3895</data>
+      <data key="d3">bridge_entry</data>
+      <data key="d4">Madhapur</data>
+      <data key="d5">False</data>
+      <data key="d6">49201954</data>
+    </node>
+    <node id="node_madhapur_metro">
+      <data key="d0">Madhapur Metro Station Junction</data>
+      <data key="d1">17.4483</data>
+      <data key="d2">78.3915</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Madhapur</data>
+      <data key="d5">True</data>
+      <data key="d6">49201955</data>
+    </node>
+    <node id="node_kavuri_hills">
+      <data key="d0">Kavuri Hills Water Tank Junction</data>
+      <data key="d1">17.4398</data>
+      <data key="d2">78.3982</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Madhapur</data>
+      <data key="d5">False</data>
+      <data key="d6">49201956</data>
+    </node>
+    <node id="node_biodiversity">
+      <data key="d0">Bio-Diversity Junction</data>
+      <data key="d1">17.43581</data>
+      <data key="d2">78.37982</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Gachibowli</data>
+      <data key="d5">True</data>
+      <data key="d6">59201959</data>
+    </node>
+    <node id="node_gachibowli_flyover">
+      <data key="d0">Gachibowli Flyover Junction</data>
+      <data key="d1">17.44021</data>
+      <data key="d2">78.3585</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Gachibowli</data>
+      <data key="d5">True</data>
+      <data key="d6">69201960</data>
+    </node>
+    <node id="node_gachibowli_orr">
+      <data key="d0">Gachibowli ORR Interchange</data>
+      <data key="d1">17.44021</data>
+      <data key="d2">78.34951</data>
+      <data key="d3">interchange</data>
+      <data key="d4">Gachibowli</data>
+      <data key="d5">True</data>
+      <data key="d6">69201961</data>
+    </node>
+    <node id="node_financial_district">
+      <data key="d0">Wipro Circle / Financial District</data>
+      <data key="d1">17.4192</data>
+      <data key="d2">78.3435</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Financial District</data>
+      <data key="d5">True</data>
+      <data key="d6">69201962</data>
+    </node>
+    <node id="node_nanakramguda">
+      <data key="d0">Nanakramguda Rotary Junction</data>
+      <data key="d1">17.4125</data>
+      <data key="d2">78.3542</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Financial District</data>
+      <data key="d5">False</data>
+      <data key="d6">69201963</data>
+    </node>
+    <node id="node_gachibowli_stadium">
+      <data key="d0">GMC Balayogi Stadium Gate</data>
+      <data key="d1">17.4455</data>
+      <data key="d2">78.3432</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Gachibowli</data>
+      <data key="d5">False</data>
+      <data key="d6">69201964</data>
+    </node>
+    <node id="node_jh_r45">
+      <data key="d0">Road No 45 / Durgam Cheruvu Bridge Approach</data>
+      <data key="d1">17.42782</data>
+      <data key="d2">78.39851</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">True</data>
+      <data key="d6">99201993</data>
+    </node>
+    <node id="node_jh_r36_r10">
+      <data key="d0">Road No 36 / 10 Intersection</data>
+      <data key="d1">17.43051</data>
+      <data key="d2">78.40122</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">True</data>
+      <data key="d6">89201982</data>
+    </node>
+    <node id="node_peddamma_temple">
+      <data key="d0">Peddamma Gudi Metro X Roads</data>
+      <data key="d1">17.4315</data>
+      <data key="d2">78.4082</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">False</data>
+      <data key="d6">89201983</data>
+    </node>
+    <node id="node_jh_checkpost">
+      <data key="d0">Jubilee Hills Checkpost</data>
+      <data key="d1">17.43202</data>
+      <data key="d2">78.41651</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">True</data>
+      <data key="d6">79201971</data>
+    </node>
+    <node id="node_apollo_crossing">
+      <data key="d0">Apollo Hospital Road 72 X Roads</data>
+      <data key="d1">17.4182</data>
+      <data key="d2">78.4125</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">False</data>
+      <data key="d6">79201972</data>
+    </node>
+    <node id="node_film_nagar">
+      <data key="d0">Film Nagar Cultural Centre Junction</data>
+      <data key="d1">17.4125</data>
+      <data key="d2">78.411</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Jubilee Hills</data>
+      <data key="d5">False</data>
+      <data key="d6">79201973</data>
+    </node>
+    <node id="node_bh_road12">
+      <data key="d0">Road No 12 Banjara Hills Junction</data>
+      <data key="d1">17.4132</data>
+      <data key="d2">78.4325</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Banjara Hills</data>
+      <data key="d5">True</data>
+      <data key="d6">79201974</data>
+    </node>
+    <node id="node_bh_road1">
+      <data key="d0">Road No 1 Banjara Hills (Taj Krishna)</data>
+      <data key="d1">17.4172</data>
+      <data key="d2">78.4485</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Banjara Hills</data>
+      <data key="d5">True</data>
+      <data key="d6">79201975</data>
+    </node>
+    <node id="node_bh_road10">
+      <data key="d0">Road No 10 Banjara Hills (Cancer Hospital)</data>
+      <data key="d1">17.4215</data>
+      <data key="d2">78.4385</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Banjara Hills</data>
+      <data key="d5">False</data>
+      <data key="d6">79201976</data>
+    </node>
+    <node id="node_masab_tank">
+      <data key="d0">Masab Tank Flyover Junction</data>
+      <data key="d1">17.40821</data>
+      <data key="d2">78.45122</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Masab Tank</data>
+      <data key="d5">True</data>
+      <data key="d6">22302036</data>
+    </node>
+    <node id="node_mehdipatnam">
+      <data key="d0">Mehdipatnam PVNR Start Junction</data>
+      <data key="d1">17.39151</data>
+      <data key="d2">78.44121</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Mehdipatnam</data>
+      <data key="d5">True</data>
+      <data key="d6">23302047</data>
+    </node>
+    <node id="node_panjagutta">
+      <data key="d0">Panjagutta Nagarjuna Circle</data>
+      <data key="d1">17.42621</data>
+      <data key="d2">78.45202</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Panjagutta</data>
+      <data key="d5">True</data>
+      <data key="d6">12301926</data>
+    </node>
+    <node id="node_ameerpet">
+      <data key="d0">Ameerpet Metro Junction</data>
+      <data key="d1">17.43721</data>
+      <data key="d2">78.44851</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Ameerpet</data>
+      <data key="d5">True</data>
+      <data key="d6">13301937</data>
+    </node>
+    <node id="node_sr_nagar">
+      <data key="d0">SR Nagar Metro Junction</data>
+      <data key="d1">17.4445</data>
+      <data key="d2">78.4442</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Ameerpet / SR Nagar</data>
+      <data key="d5">False</data>
+      <data key="d6">13301938</data>
+    </node>
+    <node id="node_begumpet">
+      <data key="d0">Begumpet Airport Road Junction</data>
+      <data key="d1">17.44251</data>
+      <data key="d2">78.46252</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Begumpet</data>
+      <data key="d5">True</data>
+      <data key="d6">14301948</data>
+    </node>
+    <node id="node_prakash_nagar">
+      <data key="d0">Prakash Nagar Metro X Roads</data>
+      <data key="d1">17.4442</data>
+      <data key="d2">78.4725</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Begumpet</data>
+      <data key="d5">False</data>
+      <data key="d6">14301949</data>
+    </node>
+    <node id="node_paradise">
+      <data key="d0">Paradise X Roads</data>
+      <data key="d1">17.44101</data>
+      <data key="d2">78.48951</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Secunderabad</data>
+      <data key="d5">True</data>
+      <data key="d6">15301959</data>
+    </node>
+    <node id="node_secunderabad_clock_tower">
+      <data key="d0">Secunderabad Clock Tower Junction</data>
+      <data key="d1">17.43952</data>
+      <data key="d2">78.50151</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Secunderabad</data>
+      <data key="d5">True</data>
+      <data key="d6">16301970</data>
+    </node>
+    <node id="node_secunderabad_station">
+      <data key="d0">Secunderabad Railway Station Entry</data>
+      <data key="d1">17.4342</data>
+      <data key="d2">78.5028</data>
+      <data key="d3">terminal_hub</data>
+      <data key="d4">Secunderabad</data>
+      <data key="d5">True</data>
+      <data key="d6">16301971</data>
+    </node>
+    <node id="node_sangeet_junction">
+      <data key="d0">Sangeet Cinema X Roads (St. Ann's)</data>
+      <data key="d1">17.4448</data>
+      <data key="d2">78.5085</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Secunderabad</data>
+      <data key="d5">True</data>
+      <data key="d6">16301972</data>
+    </node>
+    <node id="node_tarnaka">
+      <data key="d0">Tarnaka X Roads</data>
+      <data key="d1">17.42852</data>
+      <data key="d2">78.53121</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Tarnaka</data>
+      <data key="d5">True</data>
+      <data key="d6">17301981</data>
+    </node>
+    <node id="node_osmania_univ">
+      <data key="d0">Osmania University Gate X Roads</data>
+      <data key="d1">17.4215</data>
+      <data key="d2">78.5285</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Tarnaka</data>
+      <data key="d5">False</data>
+      <data key="d6">17301982</data>
+    </node>
+    <node id="node_habsiguda">
+      <data key="d0">Habsiguda Metro X Roads</data>
+      <data key="d1">17.4162</data>
+      <data key="d2">78.5442</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Uppal / Habsiguda</data>
+      <data key="d5">True</data>
+      <data key="d6">17301983</data>
+    </node>
+    <node id="node_uppal_ring">
+      <data key="d0">Uppal Ring Road / Metro Junction</data>
+      <data key="d1">17.40182</data>
+      <data key="d2">78.56051</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Uppal</data>
+      <data key="d5">True</data>
+      <data key="d6">18301992</data>
+    </node>
+    <node id="node_uppal_stadium">
+      <data key="d0">Rajiv Gandhi International Cricket Stadium Gate</data>
+      <data key="d1">17.4065</data>
+      <data key="d2">78.5512</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Uppal</data>
+      <data key="d5">False</data>
+      <data key="d6">18301993</data>
+    </node>
+    <node id="node_uppal_nagole_bridge">
+      <data key="d0">Musi River Bridge (Uppal-Nagole)</data>
+      <data key="d1">17.3882</data>
+      <data key="d2">78.5621</data>
+      <data key="d3">bridge_entry</data>
+      <data key="d4">Uppal / Nagole</data>
+      <data key="d5">False</data>
+      <data key="d6">18301994</data>
+    </node>
+    <node id="node_nagole_metro">
+      <data key="d0">Nagole Metro Station Junction</data>
+      <data key="d1">17.3782</data>
+      <data key="d2">78.5635</data>
+      <data key="d3">intersection</data>
+      <data key="d4">Nagole</data>
+      <data key="d5">True</data>
+      <data key="d6">18301995</data>
+    </node>
+    <node id="node_lbnagar_ring">
+      <data key="d0">LB Nagar X Roads Junction</data>
+      <data key="d1">17.34582</data>
+      <data key="d2">78.55201</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">LB Nagar</data>
+      <data key="d5">True</data>
+      <data key="d6">19302003</data>
+    </node>
+    <node id="node_sagar_ring">
+      <data key="d0">Sagar Ring Road X Roads</data>
+      <data key="d1">17.34821</data>
+      <data key="d2">78.54122</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">LB Nagar</data>
+      <data key="d5">True</data>
+      <data key="d6">20302014</data>
+    </node>
+    <node id="node_kothapet_crossing">
+      <data key="d0">Kothapet Fruit Market X Roads</data>
+      <data key="d1">17.3612</data>
+      <data key="d2">78.5385</data>
+      <data key="d3">intersection</data>
+      <data key="d4">LB Nagar / Kothapet</data>
+      <data key="d5">True</data>
+      <data key="d6">20302015</data>
+    </node>
+    <node id="node_dilsukhnagar">
+      <data key="d0">Dilsukhnagar Bus Depot X Roads</data>
+      <data key="d1">17.36852</data>
+      <data key="d2">78.52551</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Dilsukhnagar</data>
+      <data key="d5">True</data>
+      <data key="d6">21302025</data>
+    </node>
+    <node id="node_malakpet">
+      <data key="d0">Malakpet Nalgonda X Roads</data>
+      <data key="d1">17.3762</data>
+      <data key="d2">78.5015</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Malakpet</data>
+      <data key="d5">True</data>
+      <data key="d6">21302026</data>
+    </node>
+    <node id="node_chaderghat">
+      <data key="d0">Chaderghat Rotary Junction</data>
+      <data key="d1">17.3821</data>
+      <data key="d2">78.4905</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Central / Musi River</data>
+      <data key="d5">True</data>
+      <data key="d6">21302027</data>
+    </node>
+    <node id="node_orr_nanakramguda">
+      <data key="d0">ORR Toll Plaza Nanakramguda</data>
+      <data key="d1">17.4082</data>
+      <data key="d2">78.3385</data>
+      <data key="d3">expressway_toll</data>
+      <data key="d4">ORR South-West</data>
+      <data key="d5">False</data>
+      <data key="d6">30102001</data>
+    </node>
+    <node id="node_orr_rajendranagar">
+      <data key="d0">ORR Interchange Rajendranagar</data>
+      <data key="d1">17.325</data>
+      <data key="d2">78.395</data>
+      <data key="d3">expressway_interchange</data>
+      <data key="d4">ORR South</data>
+      <data key="d5">False</data>
+      <data key="d6">30102002</data>
+    </node>
+    <node id="node_orr_shamshabad">
+      <data key="d0">ORR Airport Interchange Shamshabad</data>
+      <data key="d1">17.265</data>
+      <data key="d2">78.421</data>
+      <data key="d3">expressway_interchange</data>
+      <data key="d4">ORR Airport</data>
+      <data key="d5">False</data>
+      <data key="d6">30102003</data>
+    </node>
+    <node id="node_orr_bongloor">
+      <data key="d0">ORR Interchange Bongloor (Sagar Highway)</data>
+      <data key="d1">17.288</data>
+      <data key="d2">78.548</data>
+      <data key="d3">expressway_interchange</data>
+      <data key="d4">ORR South-East</data>
+      <data key="d5">False</data>
+      <data key="d6">30102004</data>
+    </node>
+    <node id="node_orr_pedda_amberpet">
+      <data key="d0">ORR Interchange Pedda Amberpet (NH 65)</data>
+      <data key="d1">17.324</data>
+      <data key="d2">78.615</data>
+      <data key="d3">expressway_interchange</data>
+      <data key="d4">ORR East</data>
+      <data key="d5">False</data>
+      <data key="d6">30102005</data>
+    </node>
+    <node id="node_orr_ghatkesar">
+      <data key="d0">ORR Interchange Ghatkesar (Warangal Highway)</data>
+      <data key="d1">17.442</data>
+      <data key="d2">78.682</data>
+      <data key="d3">expressway_interchange</data>
+      <data key="d4">ORR North-East</data>
+      <data key="d5">False</data>
+      <data key="d6">30102006</data>
+    </node>
+    <node id="node_irr_chandrayangutta">
+      <data key="d0">Chandrayangutta X Roads (IRR South)</data>
+      <data key="d1">17.3285</data>
+      <data key="d2">78.4782</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Inner Ring Road South</data>
+      <data key="d5">True</data>
+      <data key="d6">30202001</data>
+    </node>
+    <node id="node_irr_aramghar">
+      <data key="d0">Aramghar X Roads / PVNR End</data>
+      <data key="d1">17.3325</data>
+      <data key="d2">78.435</data>
+      <data key="d3">major_junction</data>
+      <data key="d4">Inner Ring Road South-West</data>
+      <data key="d5">True</data>
+      <data key="d6">30202002</data>
+    </node>
+    <edge source="node_cyber_towers" target="node_kothaguda">
+      <data key="d7">road_cyber_kothaguda</data>
+      <data key="d8">road_cyber_kothaguda</data>
+      <data key="d9">Hitech City - Kothaguda Main Road</data>
+      <data key="d10">node_cyber_towers</data>
+      <data key="d11">node_kothaguda</data>
+      <data key="d12">way_114298101</data>
+      <data key="d13">primary</data>
+      <data key="d14">2254.4</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.38082, 17.45041], [78.3755, 17.4528], [78.3685, 17.4552], [78.36122, 17.45821]]</data>
+    </edge>
+    <edge source="node_cyber_towers" target="node_hitex_entry">
+      <data key="d7">road_hitex_cyber_rev</data>
+      <data key="d8">road_hitex_cyber_rev</data>
+      <data key="d9">HITEX - Cyber Towers Connecting Road</data>
+      <data key="d10">node_cyber_towers</data>
+      <data key="d11">node_hitex_entry</data>
+      <data key="d12">way_114298103</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2069.1</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.38082, 17.45041], [78.3785, 17.4595], [78.3752, 17.4682]]</data>
+    </edge>
+    <edge source="node_cyber_towers" target="node_mindspace">
+      <data key="d7">road_cyber_mindspace</data>
+      <data key="d8">road_cyber_mindspace</data>
+      <data key="d9">Hitech City Main Road (Mindspace Corridor)</data>
+      <data key="d10">node_cyber_towers</data>
+      <data key="d11">node_mindspace</data>
+      <data key="d12">way_114298104</data>
+      <data key="d13">primary</data>
+      <data key="d14">1024.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.38082, 17.45041], [78.3811, 17.4462], [78.38122, 17.44121]]</data>
+    </edge>
+    <edge source="node_cyber_towers" target="node_madhapur_metro">
+      <data key="d7">road_cyber_madhapur_metro</data>
+      <data key="d8">road_cyber_madhapur_metro</data>
+      <data key="d9">Hitech City - Madhapur Metro Avenue</data>
+      <data key="d10">node_cyber_towers</data>
+      <data key="d11">node_madhapur_metro</data>
+      <data key="d12">way_114298109</data>
+      <data key="d13">primary</data>
+      <data key="d14">1157.1</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.38082, 17.45041], [78.3865, 17.4492], [78.3915, 17.4483]]</data>
+    </edge>
+    <edge source="node_cyber_towers" target="node_hitech_station">
+      <data key="d7">road_hitech_station_cyber_rev</data>
+      <data key="d8">road_hitech_station_cyber_rev</data>
+      <data key="d9">Hitech City MMTS Station Road</data>
+      <data key="d10">node_cyber_towers</data>
+      <data key="d11">node_hitech_station</data>
+      <data key="d12">way_114298161</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2535.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.38082, 17.45041], [78.3845, 17.461], [78.3882, 17.4721]]</data>
+    </edge>
+    <edge source="node_hitex_entry" target="node_kothaguda">
+      <data key="d7">road_kothaguda_hitex_rev</data>
+      <data key="d8">road_kothaguda_hitex_rev</data>
+      <data key="d9">HITEX Exhibition Feeder Road</data>
+      <data key="d10">node_hitex_entry</data>
+      <data key="d11">node_kothaguda</data>
+      <data key="d12">way_114298102</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1869.5</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3752, 17.4682], [78.3675, 17.4641], [78.36122, 17.45821]]</data>
+    </edge>
+    <edge source="node_hitex_entry" target="node_cyber_towers">
+      <data key="d7">road_hitex_cyber</data>
+      <data key="d8">road_hitex_cyber</data>
+      <data key="d9">HITEX - Cyber Towers Connecting Road</data>
+      <data key="d10">node_hitex_entry</data>
+      <data key="d11">node_cyber_towers</data>
+      <data key="d12">way_114298103</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2069.1</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3752, 17.4682], [78.3785, 17.4595], [78.38082, 17.45041]]</data>
+    </edge>
+    <edge source="node_kothaguda" target="node_cyber_towers">
+      <data key="d7">road_cyber_kothaguda_rev</data>
+      <data key="d8">road_cyber_kothaguda_rev</data>
+      <data key="d9">Hitech City - Kothaguda Main Road</data>
+      <data key="d10">node_kothaguda</data>
+      <data key="d11">node_cyber_towers</data>
+      <data key="d12">way_114298101</data>
+      <data key="d13">primary</data>
+      <data key="d14">2254.4</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.36122, 17.45821], [78.3685, 17.4552], [78.3755, 17.4528], [78.38082, 17.45041]]</data>
+    </edge>
+    <edge source="node_kothaguda" target="node_hitex_entry">
+      <data key="d7">road_kothaguda_hitex</data>
+      <data key="d8">road_kothaguda_hitex</data>
+      <data key="d9">HITEX Exhibition Feeder Road</data>
+      <data key="d10">node_kothaguda</data>
+      <data key="d11">node_hitex_entry</data>
+      <data key="d12">way_114298102</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1869.5</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.36122, 17.45821], [78.3675, 17.4641], [78.3752, 17.4682]]</data>
+    </edge>
+    <edge source="node_kothaguda" target="node_gachibowli_flyover">
+      <data key="d7">road_kothaguda_gachibowli</data>
+      <data key="d8">road_kothaguda_gachibowli</data>
+      <data key="d9">Gachibowli - Miyapur Road (Botanical Garden)</data>
+      <data key="d10">node_kothaguda</data>
+      <data key="d11">node_gachibowli_flyover</data>
+      <data key="d12">way_114298112</data>
+      <data key="d13">primary</data>
+      <data key="d14">2022.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.36122, 17.45821], [78.3598, 17.4495], [78.3585, 17.44021]]</data>
+    </edge>
+    <edge source="node_kothaguda" target="node_sr_nagar">
+      <data key="d7">road_srnagar_kothaguda_rev</data>
+      <data key="d8">road_srnagar_kothaguda_rev</data>
+      <data key="d9">Kukatpally - Hitech City Connecting Link</data>
+      <data key="d10">node_kothaguda</data>
+      <data key="d11">node_sr_nagar</data>
+      <data key="d12">way_114298164</data>
+      <data key="d13">primary</data>
+      <data key="d14">8936.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.36122, 17.45821], [78.405, 17.452], [78.4442, 17.4445]]</data>
+    </edge>
+    <edge source="node_hitech_station" target="node_cyber_towers">
+      <data key="d7">road_hitech_station_cyber</data>
+      <data key="d8">road_hitech_station_cyber</data>
+      <data key="d9">Hitech City MMTS Station Road</data>
+      <data key="d10">node_hitech_station</data>
+      <data key="d11">node_cyber_towers</data>
+      <data key="d12">way_114298161</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2535.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3882, 17.4721], [78.3845, 17.461], [78.38082, 17.45041]]</data>
+    </edge>
+    <edge source="node_mindspace" target="node_cyber_towers">
+      <data key="d7">road_cyber_mindspace_rev</data>
+      <data key="d8">road_cyber_mindspace_rev</data>
+      <data key="d9">Hitech City Main Road (Mindspace Corridor)</data>
+      <data key="d10">node_mindspace</data>
+      <data key="d11">node_cyber_towers</data>
+      <data key="d12">way_114298104</data>
+      <data key="d13">primary</data>
+      <data key="d14">1024.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.38122, 17.44121], [78.3811, 17.4462], [78.38082, 17.45041]]</data>
+    </edge>
+    <edge source="node_mindspace" target="node_biodiversity">
+      <data key="d7">road_mindspace_biodiversity</data>
+      <data key="d8">road_mindspace_biodiversity</data>
+      <data key="d9">Old Mumbai Highway (Mindspace - Bio-Diversity)</data>
+      <data key="d10">node_mindspace</data>
+      <data key="d11">node_biodiversity</data>
+      <data key="d12">way_114298105</data>
+      <data key="d13">primary</data>
+      <data key="d14">618.6</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.38122, 17.44121], [78.3805, 17.4385], [78.37982, 17.43581]]</data>
+    </edge>
+    <edge source="node_mindspace" target="node_inorbit_mall">
+      <data key="d7">road_mindspace_inorbit</data>
+      <data key="d8">road_mindspace_inorbit</data>
+      <data key="d9">Inorbit Mall Access Avenue</data>
+      <data key="d10">node_mindspace</data>
+      <data key="d11">node_inorbit_mall</data>
+      <data key="d12">way_114298106</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1007.0</data>
+      <data key="d15">3</data>
+      <data key="d16">40</data>
+      <data key="d17">True</data>
+      <data key="d18">forward</data>
+      <data key="d19">[[78.38122, 17.44121], [78.3838, 17.4372], [78.3862, 17.4335]]</data>
+    </edge>
+    <edge source="node_inorbit_mall" target="node_durgam_cheruvu_west">
+      <data key="d7">road_inorbit_durgam</data>
+      <data key="d8">road_inorbit_durgam</data>
+      <data key="d9">Durgam Cheruvu Lakefront Road</data>
+      <data key="d10">node_inorbit_mall</data>
+      <data key="d11">node_durgam_cheruvu_west</data>
+      <data key="d12">way_114298107</data>
+      <data key="d13">secondary</data>
+      <data key="d14">508.1</data>
+      <data key="d15">2</data>
+      <data key="d16">35</data>
+      <data key="d17">True</data>
+      <data key="d18">forward</data>
+      <data key="d19">[[78.3862, 17.4335], [78.3881, 17.4318], [78.3895, 17.4302]]</data>
+    </edge>
+    <edge source="node_durgam_cheruvu_west" target="node_jh_r45">
+      <data key="d7">road_cable_bridge</data>
+      <data key="d8">road_cable_bridge</data>
+      <data key="d9">Durgam Cheruvu Cable-Stayed Bridge</data>
+      <data key="d10">node_durgam_cheruvu_west</data>
+      <data key="d11">node_jh_r45</data>
+      <data key="d12">way_114298108</data>
+      <data key="d13">primary</data>
+      <data key="d14">992.3</data>
+      <data key="d15">4</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3895, 17.4302], [78.3935, 17.429], [78.39851, 17.42782]]</data>
+    </edge>
+    <edge source="node_madhapur_metro" target="node_cyber_towers">
+      <data key="d7">road_cyber_madhapur_metro_rev</data>
+      <data key="d8">road_cyber_madhapur_metro_rev</data>
+      <data key="d9">Hitech City - Madhapur Metro Avenue</data>
+      <data key="d10">node_madhapur_metro</data>
+      <data key="d11">node_cyber_towers</data>
+      <data key="d12">way_114298109</data>
+      <data key="d13">primary</data>
+      <data key="d14">1157.1</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3915, 17.4483], [78.3865, 17.4492], [78.38082, 17.45041]]</data>
+    </edge>
+    <edge source="node_madhapur_metro" target="node_kavuri_hills">
+      <data key="d7">road_madhapur_kavuri</data>
+      <data key="d8">road_madhapur_kavuri</data>
+      <data key="d9">Madhapur - Kavuri Hills Link Road</data>
+      <data key="d10">node_madhapur_metro</data>
+      <data key="d11">node_kavuri_hills</data>
+      <data key="d12">way_114298110</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1182.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3915, 17.4483], [78.3952, 17.4435], [78.3982, 17.4398]]</data>
+    </edge>
+    <edge source="node_kavuri_hills" target="node_madhapur_metro">
+      <data key="d7">road_madhapur_kavuri_rev</data>
+      <data key="d8">road_madhapur_kavuri_rev</data>
+      <data key="d9">Madhapur - Kavuri Hills Link Road</data>
+      <data key="d10">node_kavuri_hills</data>
+      <data key="d11">node_madhapur_metro</data>
+      <data key="d12">way_114298110</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1182.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3982, 17.4398], [78.3952, 17.4435], [78.3915, 17.4483]]</data>
+    </edge>
+    <edge source="node_kavuri_hills" target="node_jh_checkpost">
+      <data key="d7">road_kavuri_jh_checkpost</data>
+      <data key="d8">road_kavuri_jh_checkpost</data>
+      <data key="d9">Kavuri Hills to Jubilee Hills Checkpost Road</data>
+      <data key="d10">node_kavuri_hills</data>
+      <data key="d11">node_jh_checkpost</data>
+      <data key="d12">way_114298111</data>
+      <data key="d13">primary</data>
+      <data key="d14">2126.4</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3982, 17.4398], [78.4065, 17.4362], [78.41651, 17.43202]]</data>
+    </edge>
+    <edge source="node_biodiversity" target="node_mindspace">
+      <data key="d7">road_mindspace_biodiversity_rev</data>
+      <data key="d8">road_mindspace_biodiversity_rev</data>
+      <data key="d9">Old Mumbai Highway (Mindspace - Bio-Diversity)</data>
+      <data key="d10">node_biodiversity</data>
+      <data key="d11">node_mindspace</data>
+      <data key="d12">way_114298105</data>
+      <data key="d13">primary</data>
+      <data key="d14">618.6</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.37982, 17.43581], [78.3805, 17.4385], [78.38122, 17.44121]]</data>
+    </edge>
+    <edge source="node_biodiversity" target="node_gachibowli_flyover">
+      <data key="d7">road_gachibowli_biodiversity_rev</data>
+      <data key="d8">road_gachibowli_biodiversity_rev</data>
+      <data key="d9">Old Mumbai Highway (Gachibowli Flyover - Biodiversity)</data>
+      <data key="d10">node_biodiversity</data>
+      <data key="d11">node_gachibowli_flyover</data>
+      <data key="d12">way_114298113</data>
+      <data key="d13">primary</data>
+      <data key="d14">2314.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.37982, 17.43581], [78.3685, 17.4382], [78.3585, 17.44021]]</data>
+    </edge>
+    <edge source="node_biodiversity" target="node_nanakramguda">
+      <data key="d7">road_nanakramguda_biodiversity_rev</data>
+      <data key="d8">road_nanakramguda_biodiversity_rev</data>
+      <data key="d9">Gachibowli - Nanakramguda Main Link</data>
+      <data key="d10">node_biodiversity</data>
+      <data key="d11">node_nanakramguda</data>
+      <data key="d12">way_114298117</data>
+      <data key="d13">primary</data>
+      <data key="d14">3759.4</data>
+      <data key="d15">4</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.37982, 17.43581], [78.3685, 17.4245], [78.3542, 17.4125]]</data>
+    </edge>
+    <edge source="node_gachibowli_flyover" target="node_kothaguda">
+      <data key="d7">road_kothaguda_gachibowli_rev</data>
+      <data key="d8">road_kothaguda_gachibowli_rev</data>
+      <data key="d9">Gachibowli - Miyapur Road (Botanical Garden)</data>
+      <data key="d10">node_gachibowli_flyover</data>
+      <data key="d11">node_kothaguda</data>
+      <data key="d12">way_114298112</data>
+      <data key="d13">primary</data>
+      <data key="d14">2022.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3585, 17.44021], [78.3598, 17.4495], [78.36122, 17.45821]]</data>
+    </edge>
+    <edge source="node_gachibowli_flyover" target="node_biodiversity">
+      <data key="d7">road_gachibowli_biodiversity</data>
+      <data key="d8">road_gachibowli_biodiversity</data>
+      <data key="d9">Old Mumbai Highway (Gachibowli Flyover - Biodiversity)</data>
+      <data key="d10">node_gachibowli_flyover</data>
+      <data key="d11">node_biodiversity</data>
+      <data key="d12">way_114298113</data>
+      <data key="d13">primary</data>
+      <data key="d14">2314.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3585, 17.44021], [78.3685, 17.4382], [78.37982, 17.43581]]</data>
+    </edge>
+    <edge source="node_gachibowli_flyover" target="node_gachibowli_orr">
+      <data key="d7">road_gachibowli_orr_link</data>
+      <data key="d8">road_gachibowli_orr_link</data>
+      <data key="d9">Gachibowli Junction ORR Entry Ramp</data>
+      <data key="d10">node_gachibowli_flyover</data>
+      <data key="d11">node_gachibowli_orr</data>
+      <data key="d12">way_114298114</data>
+      <data key="d13">trunk</data>
+      <data key="d14">953.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3585, 17.44021], [78.3535, 17.44021], [78.34951, 17.44021]]</data>
+    </edge>
+    <edge source="node_gachibowli_flyover" target="node_gachibowli_stadium">
+      <data key="d7">road_gachibowli_stadium_link_rev</data>
+      <data key="d8">road_gachibowli_stadium_link_rev</data>
+      <data key="d9">GMC Balayogi Stadium Access Road</data>
+      <data key="d10">node_gachibowli_flyover</data>
+      <data key="d11">node_gachibowli_stadium</data>
+      <data key="d12">way_114298162</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1726.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3585, 17.44021], [78.351, 17.443], [78.3432, 17.4455]]</data>
+    </edge>
+    <edge source="node_gachibowli_orr" target="node_gachibowli_flyover">
+      <data key="d7">road_gachibowli_orr_link_rev</data>
+      <data key="d8">road_gachibowli_orr_link_rev</data>
+      <data key="d9">Gachibowli Junction ORR Entry Ramp</data>
+      <data key="d10">node_gachibowli_orr</data>
+      <data key="d11">node_gachibowli_flyover</data>
+      <data key="d12">way_114298114</data>
+      <data key="d13">trunk</data>
+      <data key="d14">953.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.34951, 17.44021], [78.3535, 17.44021], [78.3585, 17.44021]]</data>
+    </edge>
+    <edge source="node_gachibowli_orr" target="node_financial_district">
+      <data key="d7">road_orr_gachibowli_financial</data>
+      <data key="d8">road_orr_gachibowli_financial</data>
+      <data key="d9">Outer Ring Road (Gachibowli to Financial District)</data>
+      <data key="d10">node_gachibowli_orr</data>
+      <data key="d11">node_financial_district</data>
+      <data key="d12">way_114298115</data>
+      <data key="d13">motorway</data>
+      <data key="d14">2422.1</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.34951, 17.44021], [78.3465, 17.4305], [78.3435, 17.4192]]</data>
+    </edge>
+    <edge source="node_financial_district" target="node_gachibowli_orr">
+      <data key="d7">road_orr_gachibowli_financial_rev</data>
+      <data key="d8">road_orr_gachibowli_financial_rev</data>
+      <data key="d9">Outer Ring Road (Gachibowli to Financial District)</data>
+      <data key="d10">node_financial_district</data>
+      <data key="d11">node_gachibowli_orr</data>
+      <data key="d12">way_114298115</data>
+      <data key="d13">motorway</data>
+      <data key="d14">2422.1</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3435, 17.4192], [78.3465, 17.4305], [78.34951, 17.44021]]</data>
+    </edge>
+    <edge source="node_financial_district" target="node_nanakramguda">
+      <data key="d7">road_financial_nanakramguda</data>
+      <data key="d8">road_financial_nanakramguda</data>
+      <data key="d9">Financial District Road (Wipro Circle - Nanakramguda)</data>
+      <data key="d10">node_financial_district</data>
+      <data key="d11">node_nanakramguda</data>
+      <data key="d12">way_114298116</data>
+      <data key="d13">primary</data>
+      <data key="d14">1362.0</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3435, 17.4192], [78.3485, 17.4155], [78.3542, 17.4125]]</data>
+    </edge>
+    <edge source="node_financial_district" target="node_orr_nanakramguda">
+      <data key="d7">road_financial_orr_south</data>
+      <data key="d8">road_financial_orr_south</data>
+      <data key="d9">Outer Ring Road (Financial District to Nanakramguda Toll)</data>
+      <data key="d10">node_financial_district</data>
+      <data key="d11">node_orr_nanakramguda</data>
+      <data key="d12">way_114298118</data>
+      <data key="d13">motorway</data>
+      <data key="d14">1335.6</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3435, 17.4192], [78.3405, 17.4135], [78.3385, 17.4082]]</data>
+    </edge>
+    <edge source="node_nanakramguda" target="node_financial_district">
+      <data key="d7">road_financial_nanakramguda_rev</data>
+      <data key="d8">road_financial_nanakramguda_rev</data>
+      <data key="d9">Financial District Road (Wipro Circle - Nanakramguda)</data>
+      <data key="d10">node_nanakramguda</data>
+      <data key="d11">node_financial_district</data>
+      <data key="d12">way_114298116</data>
+      <data key="d13">primary</data>
+      <data key="d14">1362.0</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3542, 17.4125], [78.3485, 17.4155], [78.3435, 17.4192]]</data>
+    </edge>
+    <edge source="node_nanakramguda" target="node_biodiversity">
+      <data key="d7">road_nanakramguda_biodiversity</data>
+      <data key="d8">road_nanakramguda_biodiversity</data>
+      <data key="d9">Gachibowli - Nanakramguda Main Link</data>
+      <data key="d10">node_nanakramguda</data>
+      <data key="d11">node_biodiversity</data>
+      <data key="d12">way_114298117</data>
+      <data key="d13">primary</data>
+      <data key="d14">3759.4</data>
+      <data key="d15">4</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3542, 17.4125], [78.3685, 17.4245], [78.37982, 17.43581]]</data>
+    </edge>
+    <edge source="node_gachibowli_stadium" target="node_gachibowli_flyover">
+      <data key="d7">road_gachibowli_stadium_link</data>
+      <data key="d8">road_gachibowli_stadium_link</data>
+      <data key="d9">GMC Balayogi Stadium Access Road</data>
+      <data key="d10">node_gachibowli_stadium</data>
+      <data key="d11">node_gachibowli_flyover</data>
+      <data key="d12">way_114298162</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1726.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3432, 17.4455], [78.351, 17.443], [78.3585, 17.44021]]</data>
+    </edge>
+    <edge source="node_jh_r45" target="node_durgam_cheruvu_west">
+      <data key="d7">road_cable_bridge_rev</data>
+      <data key="d8">road_cable_bridge_rev</data>
+      <data key="d9">Durgam Cheruvu Cable-Stayed Bridge</data>
+      <data key="d10">node_jh_r45</data>
+      <data key="d11">node_durgam_cheruvu_west</data>
+      <data key="d12">way_114298108</data>
+      <data key="d13">primary</data>
+      <data key="d14">992.3</data>
+      <data key="d15">4</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.39851, 17.42782], [78.3935, 17.429], [78.3895, 17.4302]]</data>
+    </edge>
+    <edge source="node_jh_r45" target="node_jh_r36_r10">
+      <data key="d7">road_jh_r45_r36</data>
+      <data key="d8">road_jh_r45_r36</data>
+      <data key="d9">Road No 45 Jubilee Hills Corridor</data>
+      <data key="d10">node_jh_r45</data>
+      <data key="d11">node_jh_r36_r10</data>
+      <data key="d12">way_114298119</data>
+      <data key="d13">primary</data>
+      <data key="d14">416.0</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.39851, 17.42782], [78.4001, 17.4292], [78.40122, 17.43051]]</data>
+    </edge>
+    <edge source="node_jh_r36_r10" target="node_jh_r45">
+      <data key="d7">road_jh_r45_r36_rev</data>
+      <data key="d8">road_jh_r45_r36_rev</data>
+      <data key="d9">Road No 45 Jubilee Hills Corridor</data>
+      <data key="d10">node_jh_r36_r10</data>
+      <data key="d11">node_jh_r45</data>
+      <data key="d12">way_114298119</data>
+      <data key="d13">primary</data>
+      <data key="d14">416.0</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.40122, 17.43051], [78.4001, 17.4292], [78.39851, 17.42782]]</data>
+    </edge>
+    <edge source="node_jh_r36_r10" target="node_peddamma_temple">
+      <data key="d7">road_jh_r36_peddamma</data>
+      <data key="d8">road_jh_r36_peddamma</data>
+      <data key="d9">Road No 36 Commercial Spine (R36/10 to Peddamma Gudi)</data>
+      <data key="d10">node_jh_r36_r10</data>
+      <data key="d11">node_peddamma_temple</data>
+      <data key="d12">way_114298120</data>
+      <data key="d13">primary</data>
+      <data key="d14">748.7</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.40122, 17.43051], [78.4045, 17.431], [78.4082, 17.4315]]</data>
+    </edge>
+    <edge source="node_peddamma_temple" target="node_jh_r36_r10">
+      <data key="d7">road_jh_r36_peddamma_rev</data>
+      <data key="d8">road_jh_r36_peddamma_rev</data>
+      <data key="d9">Road No 36 Commercial Spine (R36/10 to Peddamma Gudi)</data>
+      <data key="d10">node_peddamma_temple</data>
+      <data key="d11">node_jh_r36_r10</data>
+      <data key="d12">way_114298120</data>
+      <data key="d13">primary</data>
+      <data key="d14">748.7</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4082, 17.4315], [78.4045, 17.431], [78.40122, 17.43051]]</data>
+    </edge>
+    <edge source="node_peddamma_temple" target="node_jh_checkpost">
+      <data key="d7">road_peddamma_jh_checkpost</data>
+      <data key="d8">road_peddamma_jh_checkpost</data>
+      <data key="d9">Road No 36 (Peddamma Gudi to Jubilee Checkpost)</data>
+      <data key="d10">node_peddamma_temple</data>
+      <data key="d11">node_jh_checkpost</data>
+      <data key="d12">way_114298121</data>
+      <data key="d13">primary</data>
+      <data key="d14">883.5</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4082, 17.4315], [78.4125, 17.4318], [78.41651, 17.43202]]</data>
+    </edge>
+    <edge source="node_jh_checkpost" target="node_kavuri_hills">
+      <data key="d7">road_kavuri_jh_checkpost_rev</data>
+      <data key="d8">road_kavuri_jh_checkpost_rev</data>
+      <data key="d9">Kavuri Hills to Jubilee Hills Checkpost Road</data>
+      <data key="d10">node_jh_checkpost</data>
+      <data key="d11">node_kavuri_hills</data>
+      <data key="d12">way_114298111</data>
+      <data key="d13">primary</data>
+      <data key="d14">2126.4</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.41651, 17.43202], [78.4065, 17.4362], [78.3982, 17.4398]]</data>
+    </edge>
+    <edge source="node_jh_checkpost" target="node_peddamma_temple">
+      <data key="d7">road_peddamma_jh_checkpost_rev</data>
+      <data key="d8">road_peddamma_jh_checkpost_rev</data>
+      <data key="d9">Road No 36 (Peddamma Gudi to Jubilee Checkpost)</data>
+      <data key="d10">node_jh_checkpost</data>
+      <data key="d11">node_peddamma_temple</data>
+      <data key="d12">way_114298121</data>
+      <data key="d13">primary</data>
+      <data key="d14">883.5</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.41651, 17.43202], [78.4125, 17.4318], [78.4082, 17.4315]]</data>
+    </edge>
+    <edge source="node_jh_checkpost" target="node_apollo_crossing">
+      <data key="d7">road_jh_apollo</data>
+      <data key="d8">road_jh_apollo</data>
+      <data key="d9">Road No 72 Film Nagar (Apollo Hospital Access)</data>
+      <data key="d10">node_jh_checkpost</data>
+      <data key="d11">node_apollo_crossing</data>
+      <data key="d12">way_114298122</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1594.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.41651, 17.43202], [78.4142, 17.4245], [78.4125, 17.4182]]</data>
+    </edge>
+    <edge source="node_jh_checkpost" target="node_bh_road10">
+      <data key="d7">road_jh_checkpost_bh_road10</data>
+      <data key="d8">road_jh_checkpost_bh_road10</data>
+      <data key="d9">Jubilee Hills - Banjara Hills Road No 10 Connection</data>
+      <data key="d10">node_jh_checkpost</data>
+      <data key="d11">node_bh_road10</data>
+      <data key="d12">way_114298125</data>
+      <data key="d13">primary</data>
+      <data key="d14">2616.1</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.41651, 17.43202], [78.4285, 17.4272], [78.4385, 17.4215]]</data>
+    </edge>
+    <edge source="node_apollo_crossing" target="node_jh_checkpost">
+      <data key="d7">road_jh_apollo_rev</data>
+      <data key="d8">road_jh_apollo_rev</data>
+      <data key="d9">Road No 72 Film Nagar (Apollo Hospital Access)</data>
+      <data key="d10">node_apollo_crossing</data>
+      <data key="d11">node_jh_checkpost</data>
+      <data key="d12">way_114298122</data>
+      <data key="d13">secondary</data>
+      <data key="d14">1594.7</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4125, 17.4182], [78.4142, 17.4245], [78.41651, 17.43202]]</data>
+    </edge>
+    <edge source="node_apollo_crossing" target="node_film_nagar">
+      <data key="d7">road_apollo_film_nagar</data>
+      <data key="d8">road_apollo_film_nagar</data>
+      <data key="d9">Film Nagar Main Road</data>
+      <data key="d10">node_apollo_crossing</data>
+      <data key="d11">node_film_nagar</data>
+      <data key="d12">way_114298123</data>
+      <data key="d13">secondary</data>
+      <data key="d14">654.1</data>
+      <data key="d15">2</data>
+      <data key="d16">35</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4125, 17.4182], [78.4118, 17.415], [78.411, 17.4125]]</data>
+    </edge>
+    <edge source="node_film_nagar" target="node_apollo_crossing">
+      <data key="d7">road_apollo_film_nagar_rev</data>
+      <data key="d8">road_apollo_film_nagar_rev</data>
+      <data key="d9">Film Nagar Main Road</data>
+      <data key="d10">node_film_nagar</data>
+      <data key="d11">node_apollo_crossing</data>
+      <data key="d12">way_114298123</data>
+      <data key="d13">secondary</data>
+      <data key="d14">654.1</data>
+      <data key="d15">2</data>
+      <data key="d16">35</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.411, 17.4125], [78.4118, 17.415], [78.4125, 17.4182]]</data>
+    </edge>
+    <edge source="node_film_nagar" target="node_bh_road12">
+      <data key="d7">road_film_nagar_bh_road12</data>
+      <data key="d8">road_film_nagar_bh_road12</data>
+      <data key="d9">Film Nagar to Banjara Hills Road No 12</data>
+      <data key="d10">node_film_nagar</data>
+      <data key="d11">node_bh_road12</data>
+      <data key="d12">way_114298124</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2282.5</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.411, 17.4125], [78.4215, 17.4128], [78.4325, 17.4132]]</data>
+    </edge>
+    <edge source="node_bh_road12" target="node_film_nagar">
+      <data key="d7">road_film_nagar_bh_road12_rev</data>
+      <data key="d8">road_film_nagar_bh_road12_rev</data>
+      <data key="d9">Film Nagar to Banjara Hills Road No 12</data>
+      <data key="d10">node_bh_road12</data>
+      <data key="d11">node_film_nagar</data>
+      <data key="d12">way_114298124</data>
+      <data key="d13">secondary</data>
+      <data key="d14">2282.5</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4325, 17.4132], [78.4215, 17.4128], [78.411, 17.4125]]</data>
+    </edge>
+    <edge source="node_bh_road1" target="node_bh_road10">
+      <data key="d7">road_bh_road10_road1_rev</data>
+      <data key="d8">road_bh_road10_road1_rev</data>
+      <data key="d9">Banjara Hills Road No 10 to Road No 1</data>
+      <data key="d10">node_bh_road1</data>
+      <data key="d11">node_bh_road10</data>
+      <data key="d12">way_114298126</data>
+      <data key="d13">primary</data>
+      <data key="d14">1163.8</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4485, 17.4172], [78.4445, 17.419], [78.4385, 17.4215]]</data>
+    </edge>
+    <edge source="node_bh_road1" target="node_panjagutta">
+      <data key="d7">road_bh_road1_panjagutta</data>
+      <data key="d8">road_bh_road1_panjagutta</data>
+      <data key="d9">Road No 1 Banjara Hills to Panjagutta Nagarjuna Circle</data>
+      <data key="d10">node_bh_road1</data>
+      <data key="d11">node_panjagutta</data>
+      <data key="d12">way_114298127</data>
+      <data key="d13">primary</data>
+      <data key="d14">1071.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4485, 17.4172], [78.4505, 17.4215], [78.45202, 17.42621]]</data>
+    </edge>
+    <edge source="node_bh_road1" target="node_masab_tank">
+      <data key="d7">road_bh_road1_masab_tank</data>
+      <data key="d8">road_bh_road1_masab_tank</data>
+      <data key="d9">Road No 1 Banjara Hills to Masab Tank Flyover</data>
+      <data key="d10">node_bh_road1</data>
+      <data key="d11">node_masab_tank</data>
+      <data key="d12">way_114298128</data>
+      <data key="d13">primary</data>
+      <data key="d14">1040.8</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4485, 17.4172], [78.4498, 17.4125], [78.45122, 17.40821]]</data>
+    </edge>
+    <edge source="node_bh_road10" target="node_jh_checkpost">
+      <data key="d7">road_jh_checkpost_bh_road10_rev</data>
+      <data key="d8">road_jh_checkpost_bh_road10_rev</data>
+      <data key="d9">Jubilee Hills - Banjara Hills Road No 10 Connection</data>
+      <data key="d10">node_bh_road10</data>
+      <data key="d11">node_jh_checkpost</data>
+      <data key="d12">way_114298125</data>
+      <data key="d13">primary</data>
+      <data key="d14">2616.1</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4385, 17.4215], [78.4285, 17.4272], [78.41651, 17.43202]]</data>
+    </edge>
+    <edge source="node_bh_road10" target="node_bh_road1">
+      <data key="d7">road_bh_road10_road1</data>
+      <data key="d8">road_bh_road10_road1</data>
+      <data key="d9">Banjara Hills Road No 10 to Road No 1</data>
+      <data key="d10">node_bh_road10</data>
+      <data key="d11">node_bh_road1</data>
+      <data key="d12">way_114298126</data>
+      <data key="d13">primary</data>
+      <data key="d14">1163.8</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4385, 17.4215], [78.4445, 17.419], [78.4485, 17.4172]]</data>
+    </edge>
+    <edge source="node_masab_tank" target="node_bh_road1">
+      <data key="d7">road_bh_road1_masab_tank_rev</data>
+      <data key="d8">road_bh_road1_masab_tank_rev</data>
+      <data key="d9">Road No 1 Banjara Hills to Masab Tank Flyover</data>
+      <data key="d10">node_masab_tank</data>
+      <data key="d11">node_bh_road1</data>
+      <data key="d12">way_114298128</data>
+      <data key="d13">primary</data>
+      <data key="d14">1040.8</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.45122, 17.40821], [78.4498, 17.4125], [78.4485, 17.4172]]</data>
+    </edge>
+    <edge source="node_masab_tank" target="node_mehdipatnam">
+      <data key="d7">road_masab_mehdipatnam</data>
+      <data key="d8">road_masab_mehdipatnam</data>
+      <data key="d9">Inner Ring Road (Masab Tank to Mehdipatnam)</data>
+      <data key="d10">node_masab_tank</data>
+      <data key="d11">node_mehdipatnam</data>
+      <data key="d12">way_114298129</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2141.2</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.45122, 17.40821], [78.4465, 17.3995], [78.44121, 17.39151]]</data>
+    </edge>
+    <edge source="node_masab_tank" target="node_chaderghat">
+      <data key="d7">road_chaderghat_masab_tank_rev</data>
+      <data key="d8">road_chaderghat_masab_tank_rev</data>
+      <data key="d9">Nampally - Masab Tank Connecting Arterial</data>
+      <data key="d10">node_masab_tank</data>
+      <data key="d11">node_chaderghat</data>
+      <data key="d12">way_114298163</data>
+      <data key="d13">primary</data>
+      <data key="d14">5079.5</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.45122, 17.40821], [78.471, 17.395], [78.4905, 17.3821]]</data>
+    </edge>
+    <edge source="node_mehdipatnam" target="node_masab_tank">
+      <data key="d7">road_masab_mehdipatnam_rev</data>
+      <data key="d8">road_masab_mehdipatnam_rev</data>
+      <data key="d9">Inner Ring Road (Masab Tank to Mehdipatnam)</data>
+      <data key="d10">node_mehdipatnam</data>
+      <data key="d11">node_masab_tank</data>
+      <data key="d12">way_114298129</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2141.2</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.44121, 17.39151], [78.4465, 17.3995], [78.45122, 17.40821]]</data>
+    </edge>
+    <edge source="node_mehdipatnam" target="node_irr_aramghar">
+      <data key="d7">road_pvnr_expressway</data>
+      <data key="d8">road_pvnr_expressway</data>
+      <data key="d9">P.V. Narasimha Rao Elevated Expressway</data>
+      <data key="d10">node_mehdipatnam</data>
+      <data key="d11">node_irr_aramghar</data>
+      <data key="d12">way_114298153</data>
+      <data key="d13">motorway</data>
+      <data key="d14">6595.2</data>
+      <data key="d15">4</data>
+      <data key="d16">80</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.44121, 17.39151], [78.4385, 17.362], [78.435, 17.3325]]</data>
+    </edge>
+    <edge source="node_panjagutta" target="node_bh_road1">
+      <data key="d7">road_bh_road1_panjagutta_rev</data>
+      <data key="d8">road_bh_road1_panjagutta_rev</data>
+      <data key="d9">Road No 1 Banjara Hills to Panjagutta Nagarjuna Circle</data>
+      <data key="d10">node_panjagutta</data>
+      <data key="d11">node_bh_road1</data>
+      <data key="d12">way_114298127</data>
+      <data key="d13">primary</data>
+      <data key="d14">1071.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.45202, 17.42621], [78.4505, 17.4215], [78.4485, 17.4172]]</data>
+    </edge>
+    <edge source="node_panjagutta" target="node_ameerpet">
+      <data key="d7">road_panjagutta_ameerpet</data>
+      <data key="d8">road_panjagutta_ameerpet</data>
+      <data key="d9">Panjagutta - Ameerpet Metro Corridor (NH 65)</data>
+      <data key="d10">node_panjagutta</data>
+      <data key="d11">node_ameerpet</data>
+      <data key="d12">way_114298130</data>
+      <data key="d13">primary</data>
+      <data key="d14">1278.9</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.45202, 17.42621], [78.4502, 17.4315], [78.44851, 17.43721]]</data>
+    </edge>
+    <edge source="node_panjagutta" target="node_begumpet">
+      <data key="d7">road_panjagutta_begumpet</data>
+      <data key="d8">road_panjagutta_begumpet</data>
+      <data key="d9">Panjagutta Flyover to Begumpet Main Road</data>
+      <data key="d10">node_panjagutta</data>
+      <data key="d11">node_begumpet</data>
+      <data key="d12">way_114298132</data>
+      <data key="d13">primary</data>
+      <data key="d14">2127.6</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.45202, 17.42621], [78.4575, 17.4345], [78.46252, 17.44251]]</data>
+    </edge>
+    <edge source="node_ameerpet" target="node_panjagutta">
+      <data key="d7">road_panjagutta_ameerpet_rev</data>
+      <data key="d8">road_panjagutta_ameerpet_rev</data>
+      <data key="d9">Panjagutta - Ameerpet Metro Corridor (NH 65)</data>
+      <data key="d10">node_ameerpet</data>
+      <data key="d11">node_panjagutta</data>
+      <data key="d12">way_114298130</data>
+      <data key="d13">primary</data>
+      <data key="d14">1278.9</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.44851, 17.43721], [78.4502, 17.4315], [78.45202, 17.42621]]</data>
+    </edge>
+    <edge source="node_ameerpet" target="node_sr_nagar">
+      <data key="d7">road_ameerpet_srnagar</data>
+      <data key="d8">road_ameerpet_srnagar</data>
+      <data key="d9">NH 65 Ameerpet to SR Nagar</data>
+      <data key="d10">node_ameerpet</data>
+      <data key="d11">node_sr_nagar</data>
+      <data key="d12">way_114298131</data>
+      <data key="d13">primary</data>
+      <data key="d14">930.8</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.44851, 17.43721], [78.4462, 17.441], [78.4442, 17.4445]]</data>
+    </edge>
+    <edge source="node_sr_nagar" target="node_ameerpet">
+      <data key="d7">road_ameerpet_srnagar_rev</data>
+      <data key="d8">road_ameerpet_srnagar_rev</data>
+      <data key="d9">NH 65 Ameerpet to SR Nagar</data>
+      <data key="d10">node_sr_nagar</data>
+      <data key="d11">node_ameerpet</data>
+      <data key="d12">way_114298131</data>
+      <data key="d13">primary</data>
+      <data key="d14">930.8</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4442, 17.4445], [78.4462, 17.441], [78.44851, 17.43721]]</data>
+    </edge>
+    <edge source="node_sr_nagar" target="node_kothaguda">
+      <data key="d7">road_srnagar_kothaguda</data>
+      <data key="d8">road_srnagar_kothaguda</data>
+      <data key="d9">Kukatpally - Hitech City Connecting Link</data>
+      <data key="d10">node_sr_nagar</data>
+      <data key="d11">node_kothaguda</data>
+      <data key="d12">way_114298164</data>
+      <data key="d13">primary</data>
+      <data key="d14">8936.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4442, 17.4445], [78.405, 17.452], [78.36122, 17.45821]]</data>
+    </edge>
+    <edge source="node_begumpet" target="node_panjagutta">
+      <data key="d7">road_panjagutta_begumpet_rev</data>
+      <data key="d8">road_panjagutta_begumpet_rev</data>
+      <data key="d9">Panjagutta Flyover to Begumpet Main Road</data>
+      <data key="d10">node_begumpet</data>
+      <data key="d11">node_panjagutta</data>
+      <data key="d12">way_114298132</data>
+      <data key="d13">primary</data>
+      <data key="d14">2127.6</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.46252, 17.44251], [78.4575, 17.4345], [78.45202, 17.42621]]</data>
+    </edge>
+    <edge source="node_begumpet" target="node_prakash_nagar">
+      <data key="d7">road_begumpet_prakash_nagar</data>
+      <data key="d8">road_begumpet_prakash_nagar</data>
+      <data key="d9">Begumpet Airport Road (Prakash Nagar Corridor)</data>
+      <data key="d10">node_begumpet</data>
+      <data key="d11">node_prakash_nagar</data>
+      <data key="d12">way_114298133</data>
+      <data key="d13">primary</data>
+      <data key="d14">1075.7</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.46252, 17.44251], [78.4675, 17.4435], [78.4725, 17.4442]]</data>
+    </edge>
+    <edge source="node_prakash_nagar" target="node_begumpet">
+      <data key="d7">road_begumpet_prakash_nagar_rev</data>
+      <data key="d8">road_begumpet_prakash_nagar_rev</data>
+      <data key="d9">Begumpet Airport Road (Prakash Nagar Corridor)</data>
+      <data key="d10">node_prakash_nagar</data>
+      <data key="d11">node_begumpet</data>
+      <data key="d12">way_114298133</data>
+      <data key="d13">primary</data>
+      <data key="d14">1075.7</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4725, 17.4442], [78.4675, 17.4435], [78.46252, 17.44251]]</data>
+    </edge>
+    <edge source="node_prakash_nagar" target="node_paradise">
+      <data key="d7">road_prakash_paradise</data>
+      <data key="d8">road_prakash_paradise</data>
+      <data key="d9">Sardar Patel Road (Begumpet to Paradise)</data>
+      <data key="d10">node_prakash_nagar</data>
+      <data key="d11">node_paradise</data>
+      <data key="d12">way_114298134</data>
+      <data key="d13">primary</data>
+      <data key="d14">1840.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4725, 17.4442], [78.4815, 17.4428], [78.48951, 17.44101]]</data>
+    </edge>
+    <edge source="node_paradise" target="node_prakash_nagar">
+      <data key="d7">road_prakash_paradise_rev</data>
+      <data key="d8">road_prakash_paradise_rev</data>
+      <data key="d9">Sardar Patel Road (Begumpet to Paradise)</data>
+      <data key="d10">node_paradise</data>
+      <data key="d11">node_prakash_nagar</data>
+      <data key="d12">way_114298134</data>
+      <data key="d13">primary</data>
+      <data key="d14">1840.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.48951, 17.44101], [78.4815, 17.4428], [78.4725, 17.4442]]</data>
+    </edge>
+    <edge source="node_paradise" target="node_secunderabad_clock_tower">
+      <data key="d7">road_paradise_clock_tower</data>
+      <data key="d8">road_paradise_clock_tower</data>
+      <data key="d9">MG Road / Sarojini Devi Road (Paradise to Clock Tower)</data>
+      <data key="d10">node_paradise</data>
+      <data key="d11">node_secunderabad_clock_tower</data>
+      <data key="d12">way_114298135</data>
+      <data key="d13">primary</data>
+      <data key="d14">1283.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.48951, 17.44101], [78.4955, 17.4402], [78.50151, 17.43952]]</data>
+    </edge>
+    <edge source="node_secunderabad_clock_tower" target="node_paradise">
+      <data key="d7">road_paradise_clock_tower_rev</data>
+      <data key="d8">road_paradise_clock_tower_rev</data>
+      <data key="d9">MG Road / Sarojini Devi Road (Paradise to Clock Tower)</data>
+      <data key="d10">node_secunderabad_clock_tower</data>
+      <data key="d11">node_paradise</data>
+      <data key="d12">way_114298135</data>
+      <data key="d13">primary</data>
+      <data key="d14">1283.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.50151, 17.43952], [78.4955, 17.4402], [78.48951, 17.44101]]</data>
+    </edge>
+    <edge source="node_secunderabad_clock_tower" target="node_secunderabad_station">
+      <data key="d7">road_clock_tower_station</data>
+      <data key="d8">road_clock_tower_station</data>
+      <data key="d9">Station Road Secunderabad Terminal Link</data>
+      <data key="d10">node_secunderabad_clock_tower</data>
+      <data key="d11">node_secunderabad_station</data>
+      <data key="d12">way_114298136</data>
+      <data key="d13">secondary</data>
+      <data key="d14">607.2</data>
+      <data key="d15">4</data>
+      <data key="d16">35</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.50151, 17.43952], [78.5022, 17.4368], [78.5028, 17.4342]]</data>
+    </edge>
+    <edge source="node_secunderabad_clock_tower" target="node_sangeet_junction">
+      <data key="d7">road_clock_tower_sangeet</data>
+      <data key="d8">road_clock_tower_sangeet</data>
+      <data key="d9">Sangeet Cinema - Clock Tower Avenue</data>
+      <data key="d10">node_secunderabad_clock_tower</data>
+      <data key="d11">node_sangeet_junction</data>
+      <data key="d12">way_114298137</data>
+      <data key="d13">secondary</data>
+      <data key="d14">945.9</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.50151, 17.43952], [78.505, 17.4421], [78.5085, 17.4448]]</data>
+    </edge>
+    <edge source="node_secunderabad_station" target="node_secunderabad_clock_tower">
+      <data key="d7">road_clock_tower_station_rev</data>
+      <data key="d8">road_clock_tower_station_rev</data>
+      <data key="d9">Station Road Secunderabad Terminal Link</data>
+      <data key="d10">node_secunderabad_station</data>
+      <data key="d11">node_secunderabad_clock_tower</data>
+      <data key="d12">way_114298136</data>
+      <data key="d13">secondary</data>
+      <data key="d14">607.2</data>
+      <data key="d15">4</data>
+      <data key="d16">35</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5028, 17.4342], [78.5022, 17.4368], [78.50151, 17.43952]]</data>
+    </edge>
+    <edge source="node_sangeet_junction" target="node_secunderabad_clock_tower">
+      <data key="d7">road_clock_tower_sangeet_rev</data>
+      <data key="d8">road_clock_tower_sangeet_rev</data>
+      <data key="d9">Sangeet Cinema - Clock Tower Avenue</data>
+      <data key="d10">node_sangeet_junction</data>
+      <data key="d11">node_secunderabad_clock_tower</data>
+      <data key="d12">way_114298137</data>
+      <data key="d13">secondary</data>
+      <data key="d14">945.9</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5085, 17.4448], [78.505, 17.4421], [78.50151, 17.43952]]</data>
+    </edge>
+    <edge source="node_sangeet_junction" target="node_tarnaka">
+      <data key="d7">road_sangeet_tarnaka</data>
+      <data key="d8">road_sangeet_tarnaka</data>
+      <data key="d9">Mettuguda - Tarnaka Flyover Corridor</data>
+      <data key="d10">node_sangeet_junction</data>
+      <data key="d11">node_tarnaka</data>
+      <data key="d12">way_114298138</data>
+      <data key="d13">primary</data>
+      <data key="d14">3014.4</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5085, 17.4448], [78.5195, 17.4365], [78.53121, 17.42852]]</data>
+    </edge>
+    <edge source="node_tarnaka" target="node_sangeet_junction">
+      <data key="d7">road_sangeet_tarnaka_rev</data>
+      <data key="d8">road_sangeet_tarnaka_rev</data>
+      <data key="d9">Mettuguda - Tarnaka Flyover Corridor</data>
+      <data key="d10">node_tarnaka</data>
+      <data key="d11">node_sangeet_junction</data>
+      <data key="d12">way_114298138</data>
+      <data key="d13">primary</data>
+      <data key="d14">3014.4</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.53121, 17.42852], [78.5195, 17.4365], [78.5085, 17.4448]]</data>
+    </edge>
+    <edge source="node_tarnaka" target="node_osmania_univ">
+      <data key="d7">road_tarnaka_ou</data>
+      <data key="d8">road_tarnaka_ou</data>
+      <data key="d9">Osmania University Road</data>
+      <data key="d10">node_tarnaka</data>
+      <data key="d11">node_osmania_univ</data>
+      <data key="d12">way_114298139</data>
+      <data key="d13">secondary</data>
+      <data key="d14">831.9</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.53121, 17.42852], [78.5298, 17.4248], [78.5285, 17.4215]]</data>
+    </edge>
+    <edge source="node_tarnaka" target="node_habsiguda">
+      <data key="d7">road_tarnaka_habsiguda</data>
+      <data key="d8">road_tarnaka_habsiguda</data>
+      <data key="d9">Tarnaka - Habsiguda Main Road</data>
+      <data key="d10">node_tarnaka</data>
+      <data key="d11">node_habsiguda</data>
+      <data key="d12">way_114298140</data>
+      <data key="d13">primary</data>
+      <data key="d14">1948.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.53121, 17.42852], [78.5385, 17.4225], [78.5442, 17.4162]]</data>
+    </edge>
+    <edge source="node_osmania_univ" target="node_tarnaka">
+      <data key="d7">road_tarnaka_ou_rev</data>
+      <data key="d8">road_tarnaka_ou_rev</data>
+      <data key="d9">Osmania University Road</data>
+      <data key="d10">node_osmania_univ</data>
+      <data key="d11">node_tarnaka</data>
+      <data key="d12">way_114298139</data>
+      <data key="d13">secondary</data>
+      <data key="d14">831.9</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5285, 17.4215], [78.5298, 17.4248], [78.53121, 17.42852]]</data>
+    </edge>
+    <edge source="node_habsiguda" target="node_tarnaka">
+      <data key="d7">road_tarnaka_habsiguda_rev</data>
+      <data key="d8">road_tarnaka_habsiguda_rev</data>
+      <data key="d9">Tarnaka - Habsiguda Main Road</data>
+      <data key="d10">node_habsiguda</data>
+      <data key="d11">node_tarnaka</data>
+      <data key="d12">way_114298140</data>
+      <data key="d13">primary</data>
+      <data key="d14">1948.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5442, 17.4162], [78.5385, 17.4225], [78.53121, 17.42852]]</data>
+    </edge>
+    <edge source="node_habsiguda" target="node_uppal_stadium">
+      <data key="d7">road_habsiguda_uppal_stadium</data>
+      <data key="d8">road_habsiguda_uppal_stadium</data>
+      <data key="d9">Habsiguda to Uppal Stadium Road</data>
+      <data key="d10">node_habsiguda</data>
+      <data key="d11">node_uppal_stadium</data>
+      <data key="d12">way_114298141</data>
+      <data key="d13">primary</data>
+      <data key="d14">1310.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5442, 17.4162], [78.5482, 17.411], [78.5512, 17.4065]]</data>
+    </edge>
+    <edge source="node_uppal_ring" target="node_uppal_stadium">
+      <data key="d7">road_uppal_stadium_ring_rev</data>
+      <data key="d8">road_uppal_stadium_ring_rev</data>
+      <data key="d9">Uppal Stadium to Uppal Ring Road</data>
+      <data key="d10">node_uppal_ring</data>
+      <data key="d11">node_uppal_stadium</data>
+      <data key="d12">way_114298142</data>
+      <data key="d13">primary</data>
+      <data key="d14">1117.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.56051, 17.40182], [78.5562, 17.4038], [78.5512, 17.4065]]</data>
+    </edge>
+    <edge source="node_uppal_ring" target="node_uppal_nagole_bridge">
+      <data key="d7">road_uppal_ring_bridge</data>
+      <data key="d8">road_uppal_ring_bridge</data>
+      <data key="d9">Inner Ring Road (Uppal to Musi Bridge)</data>
+      <data key="d10">node_uppal_ring</data>
+      <data key="d11">node_uppal_nagole_bridge</data>
+      <data key="d12">way_114298143</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1524.1</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.56051, 17.40182], [78.5615, 17.3945], [78.5621, 17.3882]]</data>
+    </edge>
+    <edge source="node_uppal_ring" target="node_orr_ghatkesar">
+      <data key="d7">road_uppal_ghatkesar_nh163</data>
+      <data key="d8">road_uppal_ghatkesar_nh163</data>
+      <data key="d9">Warangal Highway NH 163 (Uppal to ORR Ghatkesar)</data>
+      <data key="d10">node_uppal_ring</data>
+      <data key="d11">node_orr_ghatkesar</data>
+      <data key="d12">way_114298160</data>
+      <data key="d13">trunk</data>
+      <data key="d14">13642.0</data>
+      <data key="d15">6</data>
+      <data key="d16">70</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.56051, 17.40182], [78.6212, 17.4215], [78.682, 17.442]]</data>
+    </edge>
+    <edge source="node_uppal_stadium" target="node_habsiguda">
+      <data key="d7">road_habsiguda_uppal_stadium_rev</data>
+      <data key="d8">road_habsiguda_uppal_stadium_rev</data>
+      <data key="d9">Habsiguda to Uppal Stadium Road</data>
+      <data key="d10">node_uppal_stadium</data>
+      <data key="d11">node_habsiguda</data>
+      <data key="d12">way_114298141</data>
+      <data key="d13">primary</data>
+      <data key="d14">1310.3</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5512, 17.4065], [78.5482, 17.411], [78.5442, 17.4162]]</data>
+    </edge>
+    <edge source="node_uppal_stadium" target="node_uppal_ring">
+      <data key="d7">road_uppal_stadium_ring</data>
+      <data key="d8">road_uppal_stadium_ring</data>
+      <data key="d9">Uppal Stadium to Uppal Ring Road</data>
+      <data key="d10">node_uppal_stadium</data>
+      <data key="d11">node_uppal_ring</data>
+      <data key="d12">way_114298142</data>
+      <data key="d13">primary</data>
+      <data key="d14">1117.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5512, 17.4065], [78.5562, 17.4038], [78.56051, 17.40182]]</data>
+    </edge>
+    <edge source="node_uppal_nagole_bridge" target="node_uppal_ring">
+      <data key="d7">road_uppal_ring_bridge_rev</data>
+      <data key="d8">road_uppal_ring_bridge_rev</data>
+      <data key="d9">Inner Ring Road (Uppal to Musi Bridge)</data>
+      <data key="d10">node_uppal_nagole_bridge</data>
+      <data key="d11">node_uppal_ring</data>
+      <data key="d12">way_114298143</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1524.1</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5621, 17.3882], [78.5615, 17.3945], [78.56051, 17.40182]]</data>
+    </edge>
+    <edge source="node_uppal_nagole_bridge" target="node_nagole_metro">
+      <data key="d7">road_nagole_bridge_metro</data>
+      <data key="d8">road_nagole_bridge_metro</data>
+      <data key="d9">Inner Ring Road (Musi Bridge to Nagole Metro)</data>
+      <data key="d10">node_uppal_nagole_bridge</data>
+      <data key="d11">node_nagole_metro</data>
+      <data key="d12">way_114298144</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1121.9</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5621, 17.3882], [78.5628, 17.3835], [78.5635, 17.3782]]</data>
+    </edge>
+    <edge source="node_nagole_metro" target="node_uppal_nagole_bridge">
+      <data key="d7">road_nagole_bridge_metro_rev</data>
+      <data key="d8">road_nagole_bridge_metro_rev</data>
+      <data key="d9">Inner Ring Road (Musi Bridge to Nagole Metro)</data>
+      <data key="d10">node_nagole_metro</data>
+      <data key="d11">node_uppal_nagole_bridge</data>
+      <data key="d12">way_114298144</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1121.9</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5635, 17.3782], [78.5628, 17.3835], [78.5621, 17.3882]]</data>
+    </edge>
+    <edge source="node_nagole_metro" target="node_lbnagar_ring">
+      <data key="d7">road_nagole_lbnagar</data>
+      <data key="d8">road_nagole_lbnagar</data>
+      <data key="d9">Inner Ring Road (Nagole to LB Nagar X Roads)</data>
+      <data key="d10">node_nagole_metro</data>
+      <data key="d11">node_lbnagar_ring</data>
+      <data key="d12">way_114298145</data>
+      <data key="d13">trunk</data>
+      <data key="d14">3801.8</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5635, 17.3782], [78.5582, 17.3625], [78.55201, 17.34582]]</data>
+    </edge>
+    <edge source="node_lbnagar_ring" target="node_nagole_metro">
+      <data key="d7">road_nagole_lbnagar_rev</data>
+      <data key="d8">road_nagole_lbnagar_rev</data>
+      <data key="d9">Inner Ring Road (Nagole to LB Nagar X Roads)</data>
+      <data key="d10">node_lbnagar_ring</data>
+      <data key="d11">node_nagole_metro</data>
+      <data key="d12">way_114298145</data>
+      <data key="d13">trunk</data>
+      <data key="d14">3801.8</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.55201, 17.34582], [78.5582, 17.3625], [78.5635, 17.3782]]</data>
+    </edge>
+    <edge source="node_lbnagar_ring" target="node_sagar_ring">
+      <data key="d7">road_lbnagar_sagar_ring</data>
+      <data key="d8">road_lbnagar_sagar_ring</data>
+      <data key="d9">Inner Ring Road (LB Nagar to Sagar Ring Road)</data>
+      <data key="d10">node_lbnagar_ring</data>
+      <data key="d11">node_sagar_ring</data>
+      <data key="d12">way_114298146</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1175.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.55201, 17.34582], [78.5465, 17.347], [78.54122, 17.34821]]</data>
+    </edge>
+    <edge source="node_lbnagar_ring" target="node_kothapet_crossing">
+      <data key="d7">road_lbnagar_kothapet</data>
+      <data key="d8">road_lbnagar_kothapet</data>
+      <data key="d9">NH 65 (LB Nagar to Kothapet Fruit Market)</data>
+      <data key="d10">node_lbnagar_ring</data>
+      <data key="d11">node_kothapet_crossing</data>
+      <data key="d12">way_114298147</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2232.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.55201, 17.34582], [78.5455, 17.3535], [78.5385, 17.3612]]</data>
+    </edge>
+    <edge source="node_lbnagar_ring" target="node_orr_pedda_amberpet">
+      <data key="d7">road_nh65_lbnagar_amberpet</data>
+      <data key="d8">road_nh65_lbnagar_amberpet</data>
+      <data key="d9">National Highway 65 (LB Nagar to ORR Pedda Amberpet)</data>
+      <data key="d10">node_lbnagar_ring</data>
+      <data key="d11">node_orr_pedda_amberpet</data>
+      <data key="d12">way_114298159</data>
+      <data key="d13">trunk</data>
+      <data key="d14">7112.7</data>
+      <data key="d15">6</data>
+      <data key="d16">70</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.55201, 17.34582], [78.5835, 17.3348], [78.615, 17.324]]</data>
+    </edge>
+    <edge source="node_sagar_ring" target="node_lbnagar_ring">
+      <data key="d7">road_lbnagar_sagar_ring_rev</data>
+      <data key="d8">road_lbnagar_sagar_ring_rev</data>
+      <data key="d9">Inner Ring Road (LB Nagar to Sagar Ring Road)</data>
+      <data key="d10">node_sagar_ring</data>
+      <data key="d11">node_lbnagar_ring</data>
+      <data key="d12">way_114298146</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1175.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.54122, 17.34821], [78.5465, 17.347], [78.55201, 17.34582]]</data>
+    </edge>
+    <edge source="node_sagar_ring" target="node_irr_chandrayangutta">
+      <data key="d7">road_sagar_ring_chandrayangutta</data>
+      <data key="d8">road_sagar_ring_chandrayangutta</data>
+      <data key="d9">Inner Ring Road South (Sagar Ring to Chandrayangutta)</data>
+      <data key="d10">node_sagar_ring</data>
+      <data key="d11">node_irr_chandrayangutta</data>
+      <data key="d12">way_114298151</data>
+      <data key="d13">trunk</data>
+      <data key="d14">7040.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.54122, 17.34821], [78.5125, 17.3385], [78.4782, 17.3285]]</data>
+    </edge>
+    <edge source="node_kothapet_crossing" target="node_lbnagar_ring">
+      <data key="d7">road_lbnagar_kothapet_rev</data>
+      <data key="d8">road_lbnagar_kothapet_rev</data>
+      <data key="d9">NH 65 (LB Nagar to Kothapet Fruit Market)</data>
+      <data key="d10">node_kothapet_crossing</data>
+      <data key="d11">node_lbnagar_ring</data>
+      <data key="d12">way_114298147</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2232.1</data>
+      <data key="d15">6</data>
+      <data key="d16">50</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5385, 17.3612], [78.5455, 17.3535], [78.55201, 17.34582]]</data>
+    </edge>
+    <edge source="node_kothapet_crossing" target="node_dilsukhnagar">
+      <data key="d7">road_kothapet_dilsukhnagar</data>
+      <data key="d8">road_kothapet_dilsukhnagar</data>
+      <data key="d9">NH 65 (Kothapet to Dilsukhnagar)</data>
+      <data key="d10">node_kothapet_crossing</data>
+      <data key="d11">node_dilsukhnagar</data>
+      <data key="d12">way_114298148</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1601.2</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5385, 17.3612], [78.532, 17.365], [78.52551, 17.36852]]</data>
+    </edge>
+    <edge source="node_dilsukhnagar" target="node_kothapet_crossing">
+      <data key="d7">road_kothapet_dilsukhnagar_rev</data>
+      <data key="d8">road_kothapet_dilsukhnagar_rev</data>
+      <data key="d9">NH 65 (Kothapet to Dilsukhnagar)</data>
+      <data key="d10">node_dilsukhnagar</data>
+      <data key="d11">node_kothapet_crossing</data>
+      <data key="d12">way_114298148</data>
+      <data key="d13">trunk</data>
+      <data key="d14">1601.2</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.52551, 17.36852], [78.532, 17.365], [78.5385, 17.3612]]</data>
+    </edge>
+    <edge source="node_dilsukhnagar" target="node_malakpet">
+      <data key="d7">road_dilsukhnagar_malakpet</data>
+      <data key="d8">road_dilsukhnagar_malakpet</data>
+      <data key="d9">NH 65 (Dilsukhnagar to Malakpet Nalgonda X Roads)</data>
+      <data key="d10">node_dilsukhnagar</data>
+      <data key="d11">node_malakpet</data>
+      <data key="d12">way_114298149</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2687.5</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.52551, 17.36852], [78.5135, 17.3725], [78.5015, 17.3762]]</data>
+    </edge>
+    <edge source="node_malakpet" target="node_dilsukhnagar">
+      <data key="d7">road_dilsukhnagar_malakpet_rev</data>
+      <data key="d8">road_dilsukhnagar_malakpet_rev</data>
+      <data key="d9">NH 65 (Dilsukhnagar to Malakpet Nalgonda X Roads)</data>
+      <data key="d10">node_malakpet</data>
+      <data key="d11">node_dilsukhnagar</data>
+      <data key="d12">way_114298149</data>
+      <data key="d13">trunk</data>
+      <data key="d14">2687.5</data>
+      <data key="d15">6</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.5015, 17.3762], [78.5135, 17.3725], [78.52551, 17.36852]]</data>
+    </edge>
+    <edge source="node_malakpet" target="node_chaderghat">
+      <data key="d7">road_malakpet_chaderghat</data>
+      <data key="d8">road_malakpet_chaderghat</data>
+      <data key="d9">Malakpet to Chaderghat Musi River Causeway</data>
+      <data key="d10">node_malakpet</data>
+      <data key="d11">node_chaderghat</data>
+      <data key="d12">way_114298150</data>
+      <data key="d13">primary</data>
+      <data key="d14">1340.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.5015, 17.3762], [78.496, 17.3795], [78.4905, 17.3821]]</data>
+    </edge>
+    <edge source="node_chaderghat" target="node_malakpet">
+      <data key="d7">road_malakpet_chaderghat_rev</data>
+      <data key="d8">road_malakpet_chaderghat_rev</data>
+      <data key="d9">Malakpet to Chaderghat Musi River Causeway</data>
+      <data key="d10">node_chaderghat</data>
+      <data key="d11">node_malakpet</data>
+      <data key="d12">way_114298150</data>
+      <data key="d13">primary</data>
+      <data key="d14">1340.8</data>
+      <data key="d15">4</data>
+      <data key="d16">40</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4905, 17.3821], [78.496, 17.3795], [78.5015, 17.3762]]</data>
+    </edge>
+    <edge source="node_chaderghat" target="node_masab_tank">
+      <data key="d7">road_chaderghat_masab_tank</data>
+      <data key="d8">road_chaderghat_masab_tank</data>
+      <data key="d9">Nampally - Masab Tank Connecting Arterial</data>
+      <data key="d10">node_chaderghat</data>
+      <data key="d11">node_masab_tank</data>
+      <data key="d12">way_114298163</data>
+      <data key="d13">primary</data>
+      <data key="d14">5079.5</data>
+      <data key="d15">4</data>
+      <data key="d16">45</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4905, 17.3821], [78.471, 17.395], [78.45122, 17.40821]]</data>
+    </edge>
+    <edge source="node_orr_nanakramguda" target="node_financial_district">
+      <data key="d7">road_financial_orr_south_rev</data>
+      <data key="d8">road_financial_orr_south_rev</data>
+      <data key="d9">Outer Ring Road (Financial District to Nanakramguda Toll)</data>
+      <data key="d10">node_orr_nanakramguda</data>
+      <data key="d11">node_financial_district</data>
+      <data key="d12">way_114298118</data>
+      <data key="d13">motorway</data>
+      <data key="d14">1335.6</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.3385, 17.4082], [78.3405, 17.4135], [78.3435, 17.4192]]</data>
+    </edge>
+    <edge source="node_orr_nanakramguda" target="node_orr_rajendranagar">
+      <data key="d7">road_orr_nanakramguda_rajendra</data>
+      <data key="d8">road_orr_nanakramguda_rajendra</data>
+      <data key="d9">Outer Ring Road (Nanakramguda to Rajendranagar)</data>
+      <data key="d10">node_orr_nanakramguda</data>
+      <data key="d11">node_orr_rajendranagar</data>
+      <data key="d12">way_114298154</data>
+      <data key="d13">motorway</data>
+      <data key="d14">11024.8</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.3385, 17.4082], [78.3665, 17.3665], [78.395, 17.325]]</data>
+    </edge>
+    <edge source="node_orr_rajendranagar" target="node_orr_nanakramguda">
+      <data key="d7">road_orr_nanakramguda_rajendra_rev</data>
+      <data key="d8">road_orr_nanakramguda_rajendra_rev</data>
+      <data key="d9">Outer Ring Road (Nanakramguda to Rajendranagar)</data>
+      <data key="d10">node_orr_rajendranagar</data>
+      <data key="d11">node_orr_nanakramguda</data>
+      <data key="d12">way_114298154</data>
+      <data key="d13">motorway</data>
+      <data key="d14">11024.8</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.395, 17.325], [78.3665, 17.3665], [78.3385, 17.4082]]</data>
+    </edge>
+    <edge source="node_orr_rajendranagar" target="node_orr_shamshabad">
+      <data key="d7">road_orr_rajendra_shamshabad</data>
+      <data key="d8">road_orr_rajendra_shamshabad</data>
+      <data key="d9">Outer Ring Road (Rajendranagar to Shamshabad Airport)</data>
+      <data key="d10">node_orr_rajendranagar</data>
+      <data key="d11">node_orr_shamshabad</data>
+      <data key="d12">way_114298155</data>
+      <data key="d13">motorway</data>
+      <data key="d14">7220.2</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.395, 17.325], [78.408, 17.295], [78.421, 17.265]]</data>
+    </edge>
+    <edge source="node_orr_shamshabad" target="node_orr_rajendranagar">
+      <data key="d7">road_orr_rajendra_shamshabad_rev</data>
+      <data key="d8">road_orr_rajendra_shamshabad_rev</data>
+      <data key="d9">Outer Ring Road (Rajendranagar to Shamshabad Airport)</data>
+      <data key="d10">node_orr_shamshabad</data>
+      <data key="d11">node_orr_rajendranagar</data>
+      <data key="d12">way_114298155</data>
+      <data key="d13">motorway</data>
+      <data key="d14">7220.2</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.421, 17.265], [78.408, 17.295], [78.395, 17.325]]</data>
+    </edge>
+    <edge source="node_orr_shamshabad" target="node_orr_bongloor">
+      <data key="d7">road_orr_shamshabad_bongloor</data>
+      <data key="d8">road_orr_shamshabad_bongloor</data>
+      <data key="d9">Outer Ring Road (Shamshabad to Bongloor)</data>
+      <data key="d10">node_orr_shamshabad</data>
+      <data key="d11">node_orr_bongloor</data>
+      <data key="d12">way_114298156</data>
+      <data key="d13">motorway</data>
+      <data key="d14">13725.6</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.421, 17.265], [78.485, 17.276], [78.548, 17.288]]</data>
+    </edge>
+    <edge source="node_orr_bongloor" target="node_orr_shamshabad">
+      <data key="d7">road_orr_shamshabad_bongloor_rev</data>
+      <data key="d8">road_orr_shamshabad_bongloor_rev</data>
+      <data key="d9">Outer Ring Road (Shamshabad to Bongloor)</data>
+      <data key="d10">node_orr_bongloor</data>
+      <data key="d11">node_orr_shamshabad</data>
+      <data key="d12">way_114298156</data>
+      <data key="d13">motorway</data>
+      <data key="d14">13725.6</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.548, 17.288], [78.485, 17.276], [78.421, 17.265]]</data>
+    </edge>
+    <edge source="node_orr_bongloor" target="node_orr_pedda_amberpet">
+      <data key="d7">road_orr_bongloor_amberpet</data>
+      <data key="d8">road_orr_bongloor_amberpet</data>
+      <data key="d9">Outer Ring Road (Bongloor to Pedda Amberpet)</data>
+      <data key="d10">node_orr_bongloor</data>
+      <data key="d11">node_orr_pedda_amberpet</data>
+      <data key="d12">way_114298157</data>
+      <data key="d13">motorway</data>
+      <data key="d14">8161.9</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.548, 17.288], [78.5815, 17.306], [78.615, 17.324]]</data>
+    </edge>
+    <edge source="node_orr_pedda_amberpet" target="node_orr_bongloor">
+      <data key="d7">road_orr_bongloor_amberpet_rev</data>
+      <data key="d8">road_orr_bongloor_amberpet_rev</data>
+      <data key="d9">Outer Ring Road (Bongloor to Pedda Amberpet)</data>
+      <data key="d10">node_orr_pedda_amberpet</data>
+      <data key="d11">node_orr_bongloor</data>
+      <data key="d12">way_114298157</data>
+      <data key="d13">motorway</data>
+      <data key="d14">8161.9</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.615, 17.324], [78.5815, 17.306], [78.548, 17.288]]</data>
+    </edge>
+    <edge source="node_orr_pedda_amberpet" target="node_orr_ghatkesar">
+      <data key="d7">road_orr_amberpet_ghatkesar</data>
+      <data key="d8">road_orr_amberpet_ghatkesar</data>
+      <data key="d9">Outer Ring Road (Pedda Amberpet to Ghatkesar)</data>
+      <data key="d10">node_orr_pedda_amberpet</data>
+      <data key="d11">node_orr_ghatkesar</data>
+      <data key="d12">way_114298158</data>
+      <data key="d13">motorway</data>
+      <data key="d14">14923.5</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.615, 17.324], [78.6485, 17.383], [78.682, 17.442]]</data>
+    </edge>
+    <edge source="node_orr_pedda_amberpet" target="node_lbnagar_ring">
+      <data key="d7">road_nh65_lbnagar_amberpet_rev</data>
+      <data key="d8">road_nh65_lbnagar_amberpet_rev</data>
+      <data key="d9">National Highway 65 (LB Nagar to ORR Pedda Amberpet)</data>
+      <data key="d10">node_orr_pedda_amberpet</data>
+      <data key="d11">node_lbnagar_ring</data>
+      <data key="d12">way_114298159</data>
+      <data key="d13">trunk</data>
+      <data key="d14">7112.7</data>
+      <data key="d15">6</data>
+      <data key="d16">70</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.615, 17.324], [78.5835, 17.3348], [78.55201, 17.34582]]</data>
+    </edge>
+    <edge source="node_orr_ghatkesar" target="node_orr_pedda_amberpet">
+      <data key="d7">road_orr_amberpet_ghatkesar_rev</data>
+      <data key="d8">road_orr_amberpet_ghatkesar_rev</data>
+      <data key="d9">Outer Ring Road (Pedda Amberpet to Ghatkesar)</data>
+      <data key="d10">node_orr_ghatkesar</data>
+      <data key="d11">node_orr_pedda_amberpet</data>
+      <data key="d12">way_114298158</data>
+      <data key="d13">motorway</data>
+      <data key="d14">14923.5</data>
+      <data key="d15">8</data>
+      <data key="d16">100</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.682, 17.442], [78.6485, 17.383], [78.615, 17.324]]</data>
+    </edge>
+    <edge source="node_orr_ghatkesar" target="node_uppal_ring">
+      <data key="d7">road_uppal_ghatkesar_nh163_rev</data>
+      <data key="d8">road_uppal_ghatkesar_nh163_rev</data>
+      <data key="d9">Warangal Highway NH 163 (Uppal to ORR Ghatkesar)</data>
+      <data key="d10">node_orr_ghatkesar</data>
+      <data key="d11">node_uppal_ring</data>
+      <data key="d12">way_114298160</data>
+      <data key="d13">trunk</data>
+      <data key="d14">13642.0</data>
+      <data key="d15">6</data>
+      <data key="d16">70</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.682, 17.442], [78.6212, 17.4215], [78.56051, 17.40182]]</data>
+    </edge>
+    <edge source="node_irr_chandrayangutta" target="node_sagar_ring">
+      <data key="d7">road_sagar_ring_chandrayangutta_rev</data>
+      <data key="d8">road_sagar_ring_chandrayangutta_rev</data>
+      <data key="d9">Inner Ring Road South (Sagar Ring to Chandrayangutta)</data>
+      <data key="d10">node_irr_chandrayangutta</data>
+      <data key="d11">node_sagar_ring</data>
+      <data key="d12">way_114298151</data>
+      <data key="d13">trunk</data>
+      <data key="d14">7040.7</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.4782, 17.3285], [78.5125, 17.3385], [78.54122, 17.34821]]</data>
+    </edge>
+    <edge source="node_irr_chandrayangutta" target="node_irr_aramghar">
+      <data key="d7">road_chandrayangutta_aramghar</data>
+      <data key="d8">road_chandrayangutta_aramghar</data>
+      <data key="d9">Inner Ring Road South-West (Chandrayangutta to Aramghar)</data>
+      <data key="d10">node_irr_chandrayangutta</data>
+      <data key="d11">node_irr_aramghar</data>
+      <data key="d12">way_114298152</data>
+      <data key="d13">trunk</data>
+      <data key="d14">4607.1</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">bidirectional</data>
+      <data key="d19">[[78.4782, 17.3285], [78.4565, 17.3305], [78.435, 17.3325]]</data>
+    </edge>
+    <edge source="node_irr_aramghar" target="node_irr_chandrayangutta">
+      <data key="d7">road_chandrayangutta_aramghar_rev</data>
+      <data key="d8">road_chandrayangutta_aramghar_rev</data>
+      <data key="d9">Inner Ring Road South-West (Chandrayangutta to Aramghar)</data>
+      <data key="d10">node_irr_aramghar</data>
+      <data key="d11">node_irr_chandrayangutta</data>
+      <data key="d12">way_114298152</data>
+      <data key="d13">trunk</data>
+      <data key="d14">4607.1</data>
+      <data key="d15">6</data>
+      <data key="d16">60</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.435, 17.3325], [78.4565, 17.3305], [78.4782, 17.3285]]</data>
+    </edge>
+    <edge source="node_irr_aramghar" target="node_mehdipatnam">
+      <data key="d7">road_pvnr_expressway_rev</data>
+      <data key="d8">road_pvnr_expressway_rev</data>
+      <data key="d9">P.V. Narasimha Rao Elevated Expressway</data>
+      <data key="d10">node_irr_aramghar</data>
+      <data key="d11">node_mehdipatnam</data>
+      <data key="d12">way_114298153</data>
+      <data key="d13">motorway</data>
+      <data key="d14">6595.2</data>
+      <data key="d15">4</data>
+      <data key="d16">80</data>
+      <data key="d17">False</data>
+      <data key="d18">reverse</data>
+      <data key="d19">[[78.435, 17.3325], [78.4385, 17.362], [78.44121, 17.39151]]</data>
+    </edge>
+  </graph>
+</graphml>

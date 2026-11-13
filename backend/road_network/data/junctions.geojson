@@ -1,0 +1,1069 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.38082,
+          17.45041
+        ]
+      },
+      "properties": {
+        "id": "node_cyber_towers",
+        "name": "Cyber Towers Junction",
+        "node_type": "major_junction",
+        "area": "Hitech City",
+        "has_signal": true,
+        "osm_id": "49201948",
+        "degree": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3752,
+          17.4682
+        ]
+      },
+      "properties": {
+        "id": "node_hitex_entry",
+        "name": "HITEX Exhibition Entry",
+        "node_type": "intersection",
+        "area": "Hitech City",
+        "has_signal": false,
+        "osm_id": "49201949",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.36122,
+          17.45821
+        ]
+      },
+      "properties": {
+        "id": "node_kothaguda",
+        "name": "Kothaguda X Roads",
+        "node_type": "major_junction",
+        "area": "Hitech City / Kondapur",
+        "has_signal": true,
+        "osm_id": "11301915",
+        "degree": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3882,
+          17.4721
+        ]
+      },
+      "properties": {
+        "id": "node_hitech_station",
+        "name": "Hitech City MMTS Station X Roads",
+        "node_type": "intersection",
+        "area": "Hitech City",
+        "has_signal": false,
+        "osm_id": "49201951",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.38122,
+          17.44121
+        ]
+      },
+      "properties": {
+        "id": "node_mindspace",
+        "name": "Mindspace Rotary Junction",
+        "node_type": "major_junction",
+        "area": "Madhapur / Mindspace",
+        "has_signal": true,
+        "osm_id": "10301904",
+        "degree": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3862,
+          17.4335
+        ]
+      },
+      "properties": {
+        "id": "node_inorbit_mall",
+        "name": "Inorbit Mall Road Junction",
+        "node_type": "intersection",
+        "area": "Madhapur",
+        "has_signal": false,
+        "osm_id": "49201953",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3895,
+          17.4302
+        ]
+      },
+      "properties": {
+        "id": "node_durgam_cheruvu_west",
+        "name": "Durgam Cheruvu Cable Bridge West Entry",
+        "node_type": "bridge_entry",
+        "area": "Madhapur",
+        "has_signal": false,
+        "osm_id": "49201954",
+        "degree": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3915,
+          17.4483
+        ]
+      },
+      "properties": {
+        "id": "node_madhapur_metro",
+        "name": "Madhapur Metro Station Junction",
+        "node_type": "intersection",
+        "area": "Madhapur",
+        "has_signal": true,
+        "osm_id": "49201955",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3982,
+          17.4398
+        ]
+      },
+      "properties": {
+        "id": "node_kavuri_hills",
+        "name": "Kavuri Hills Water Tank Junction",
+        "node_type": "intersection",
+        "area": "Madhapur",
+        "has_signal": false,
+        "osm_id": "49201956",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.37982,
+          17.43581
+        ]
+      },
+      "properties": {
+        "id": "node_biodiversity",
+        "name": "Bio-Diversity Junction",
+        "node_type": "major_junction",
+        "area": "Gachibowli",
+        "has_signal": true,
+        "osm_id": "59201959",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3585,
+          17.44021
+        ]
+      },
+      "properties": {
+        "id": "node_gachibowli_flyover",
+        "name": "Gachibowli Flyover Junction",
+        "node_type": "major_junction",
+        "area": "Gachibowli",
+        "has_signal": true,
+        "osm_id": "69201960",
+        "degree": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.34951,
+          17.44021
+        ]
+      },
+      "properties": {
+        "id": "node_gachibowli_orr",
+        "name": "Gachibowli ORR Interchange",
+        "node_type": "interchange",
+        "area": "Gachibowli",
+        "has_signal": true,
+        "osm_id": "69201961",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3435,
+          17.4192
+        ]
+      },
+      "properties": {
+        "id": "node_financial_district",
+        "name": "Wipro Circle / Financial District",
+        "node_type": "major_junction",
+        "area": "Financial District",
+        "has_signal": true,
+        "osm_id": "69201962",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3542,
+          17.4125
+        ]
+      },
+      "properties": {
+        "id": "node_nanakramguda",
+        "name": "Nanakramguda Rotary Junction",
+        "node_type": "intersection",
+        "area": "Financial District",
+        "has_signal": false,
+        "osm_id": "69201963",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3432,
+          17.4455
+        ]
+      },
+      "properties": {
+        "id": "node_gachibowli_stadium",
+        "name": "GMC Balayogi Stadium Gate",
+        "node_type": "intersection",
+        "area": "Gachibowli",
+        "has_signal": false,
+        "osm_id": "69201964",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.39851,
+          17.42782
+        ]
+      },
+      "properties": {
+        "id": "node_jh_r45",
+        "name": "Road No 45 / Durgam Cheruvu Bridge Approach",
+        "node_type": "major_junction",
+        "area": "Jubilee Hills",
+        "has_signal": true,
+        "osm_id": "99201993",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.40122,
+          17.43051
+        ]
+      },
+      "properties": {
+        "id": "node_jh_r36_r10",
+        "name": "Road No 36 / 10 Intersection",
+        "node_type": "intersection",
+        "area": "Jubilee Hills",
+        "has_signal": true,
+        "osm_id": "89201982",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4082,
+          17.4315
+        ]
+      },
+      "properties": {
+        "id": "node_peddamma_temple",
+        "name": "Peddamma Gudi Metro X Roads",
+        "node_type": "intersection",
+        "area": "Jubilee Hills",
+        "has_signal": false,
+        "osm_id": "89201983",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41651,
+          17.43202
+        ]
+      },
+      "properties": {
+        "id": "node_jh_checkpost",
+        "name": "Jubilee Hills Checkpost",
+        "node_type": "major_junction",
+        "area": "Jubilee Hills",
+        "has_signal": true,
+        "osm_id": "79201971",
+        "degree": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4125,
+          17.4182
+        ]
+      },
+      "properties": {
+        "id": "node_apollo_crossing",
+        "name": "Apollo Hospital Road 72 X Roads",
+        "node_type": "intersection",
+        "area": "Jubilee Hills",
+        "has_signal": false,
+        "osm_id": "79201972",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.411,
+          17.4125
+        ]
+      },
+      "properties": {
+        "id": "node_film_nagar",
+        "name": "Film Nagar Cultural Centre Junction",
+        "node_type": "intersection",
+        "area": "Jubilee Hills",
+        "has_signal": false,
+        "osm_id": "79201973",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4325,
+          17.4132
+        ]
+      },
+      "properties": {
+        "id": "node_bh_road12",
+        "name": "Road No 12 Banjara Hills Junction",
+        "node_type": "major_junction",
+        "area": "Banjara Hills",
+        "has_signal": true,
+        "osm_id": "79201974",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4485,
+          17.4172
+        ]
+      },
+      "properties": {
+        "id": "node_bh_road1",
+        "name": "Road No 1 Banjara Hills (Taj Krishna)",
+        "node_type": "intersection",
+        "area": "Banjara Hills",
+        "has_signal": true,
+        "osm_id": "79201975",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4385,
+          17.4215
+        ]
+      },
+      "properties": {
+        "id": "node_bh_road10",
+        "name": "Road No 10 Banjara Hills (Cancer Hospital)",
+        "node_type": "intersection",
+        "area": "Banjara Hills",
+        "has_signal": false,
+        "osm_id": "79201976",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45122,
+          17.40821
+        ]
+      },
+      "properties": {
+        "id": "node_masab_tank",
+        "name": "Masab Tank Flyover Junction",
+        "node_type": "major_junction",
+        "area": "Masab Tank",
+        "has_signal": true,
+        "osm_id": "22302036",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44121,
+          17.39151
+        ]
+      },
+      "properties": {
+        "id": "node_mehdipatnam",
+        "name": "Mehdipatnam PVNR Start Junction",
+        "node_type": "major_junction",
+        "area": "Mehdipatnam",
+        "has_signal": true,
+        "osm_id": "23302047",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45202,
+          17.42621
+        ]
+      },
+      "properties": {
+        "id": "node_panjagutta",
+        "name": "Panjagutta Nagarjuna Circle",
+        "node_type": "major_junction",
+        "area": "Panjagutta",
+        "has_signal": true,
+        "osm_id": "12301926",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44851,
+          17.43721
+        ]
+      },
+      "properties": {
+        "id": "node_ameerpet",
+        "name": "Ameerpet Metro Junction",
+        "node_type": "major_junction",
+        "area": "Ameerpet",
+        "has_signal": true,
+        "osm_id": "13301937",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4442,
+          17.4445
+        ]
+      },
+      "properties": {
+        "id": "node_sr_nagar",
+        "name": "SR Nagar Metro Junction",
+        "node_type": "intersection",
+        "area": "Ameerpet / SR Nagar",
+        "has_signal": false,
+        "osm_id": "13301938",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.46252,
+          17.44251
+        ]
+      },
+      "properties": {
+        "id": "node_begumpet",
+        "name": "Begumpet Airport Road Junction",
+        "node_type": "major_junction",
+        "area": "Begumpet",
+        "has_signal": true,
+        "osm_id": "14301948",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4725,
+          17.4442
+        ]
+      },
+      "properties": {
+        "id": "node_prakash_nagar",
+        "name": "Prakash Nagar Metro X Roads",
+        "node_type": "intersection",
+        "area": "Begumpet",
+        "has_signal": false,
+        "osm_id": "14301949",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.48951,
+          17.44101
+        ]
+      },
+      "properties": {
+        "id": "node_paradise",
+        "name": "Paradise X Roads",
+        "node_type": "major_junction",
+        "area": "Secunderabad",
+        "has_signal": true,
+        "osm_id": "15301959",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50151,
+          17.43952
+        ]
+      },
+      "properties": {
+        "id": "node_secunderabad_clock_tower",
+        "name": "Secunderabad Clock Tower Junction",
+        "node_type": "major_junction",
+        "area": "Secunderabad",
+        "has_signal": true,
+        "osm_id": "16301970",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5028,
+          17.4342
+        ]
+      },
+      "properties": {
+        "id": "node_secunderabad_station",
+        "name": "Secunderabad Railway Station Entry",
+        "node_type": "terminal_hub",
+        "area": "Secunderabad",
+        "has_signal": true,
+        "osm_id": "16301971",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5085,
+          17.4448
+        ]
+      },
+      "properties": {
+        "id": "node_sangeet_junction",
+        "name": "Sangeet Cinema X Roads (St. Ann's)",
+        "node_type": "intersection",
+        "area": "Secunderabad",
+        "has_signal": true,
+        "osm_id": "16301972",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.53121,
+          17.42852
+        ]
+      },
+      "properties": {
+        "id": "node_tarnaka",
+        "name": "Tarnaka X Roads",
+        "node_type": "major_junction",
+        "area": "Tarnaka",
+        "has_signal": true,
+        "osm_id": "17301981",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5285,
+          17.4215
+        ]
+      },
+      "properties": {
+        "id": "node_osmania_univ",
+        "name": "Osmania University Gate X Roads",
+        "node_type": "intersection",
+        "area": "Tarnaka",
+        "has_signal": false,
+        "osm_id": "17301982",
+        "degree": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5442,
+          17.4162
+        ]
+      },
+      "properties": {
+        "id": "node_habsiguda",
+        "name": "Habsiguda Metro X Roads",
+        "node_type": "intersection",
+        "area": "Uppal / Habsiguda",
+        "has_signal": true,
+        "osm_id": "17301983",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.56051,
+          17.40182
+        ]
+      },
+      "properties": {
+        "id": "node_uppal_ring",
+        "name": "Uppal Ring Road / Metro Junction",
+        "node_type": "major_junction",
+        "area": "Uppal",
+        "has_signal": true,
+        "osm_id": "18301992",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5512,
+          17.4065
+        ]
+      },
+      "properties": {
+        "id": "node_uppal_stadium",
+        "name": "Rajiv Gandhi International Cricket Stadium Gate",
+        "node_type": "intersection",
+        "area": "Uppal",
+        "has_signal": false,
+        "osm_id": "18301993",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5621,
+          17.3882
+        ]
+      },
+      "properties": {
+        "id": "node_uppal_nagole_bridge",
+        "name": "Musi River Bridge (Uppal-Nagole)",
+        "node_type": "bridge_entry",
+        "area": "Uppal / Nagole",
+        "has_signal": false,
+        "osm_id": "18301994",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5635,
+          17.3782
+        ]
+      },
+      "properties": {
+        "id": "node_nagole_metro",
+        "name": "Nagole Metro Station Junction",
+        "node_type": "intersection",
+        "area": "Nagole",
+        "has_signal": true,
+        "osm_id": "18301995",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.55201,
+          17.34582
+        ]
+      },
+      "properties": {
+        "id": "node_lbnagar_ring",
+        "name": "LB Nagar X Roads Junction",
+        "node_type": "major_junction",
+        "area": "LB Nagar",
+        "has_signal": true,
+        "osm_id": "19302003",
+        "degree": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.54122,
+          17.34821
+        ]
+      },
+      "properties": {
+        "id": "node_sagar_ring",
+        "name": "Sagar Ring Road X Roads",
+        "node_type": "major_junction",
+        "area": "LB Nagar",
+        "has_signal": true,
+        "osm_id": "20302014",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5385,
+          17.3612
+        ]
+      },
+      "properties": {
+        "id": "node_kothapet_crossing",
+        "name": "Kothapet Fruit Market X Roads",
+        "node_type": "intersection",
+        "area": "LB Nagar / Kothapet",
+        "has_signal": true,
+        "osm_id": "20302015",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.52551,
+          17.36852
+        ]
+      },
+      "properties": {
+        "id": "node_dilsukhnagar",
+        "name": "Dilsukhnagar Bus Depot X Roads",
+        "node_type": "major_junction",
+        "area": "Dilsukhnagar",
+        "has_signal": true,
+        "osm_id": "21302025",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.5015,
+          17.3762
+        ]
+      },
+      "properties": {
+        "id": "node_malakpet",
+        "name": "Malakpet Nalgonda X Roads",
+        "node_type": "major_junction",
+        "area": "Malakpet",
+        "has_signal": true,
+        "osm_id": "21302026",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4905,
+          17.3821
+        ]
+      },
+      "properties": {
+        "id": "node_chaderghat",
+        "name": "Chaderghat Rotary Junction",
+        "node_type": "major_junction",
+        "area": "Central / Musi River",
+        "has_signal": true,
+        "osm_id": "21302027",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.3385,
+          17.4082
+        ]
+      },
+      "properties": {
+        "id": "node_orr_nanakramguda",
+        "name": "ORR Toll Plaza Nanakramguda",
+        "node_type": "expressway_toll",
+        "area": "ORR South-West",
+        "has_signal": false,
+        "osm_id": "30102001",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.395,
+          17.325
+        ]
+      },
+      "properties": {
+        "id": "node_orr_rajendranagar",
+        "name": "ORR Interchange Rajendranagar",
+        "node_type": "expressway_interchange",
+        "area": "ORR South",
+        "has_signal": false,
+        "osm_id": "30102002",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.421,
+          17.265
+        ]
+      },
+      "properties": {
+        "id": "node_orr_shamshabad",
+        "name": "ORR Airport Interchange Shamshabad",
+        "node_type": "expressway_interchange",
+        "area": "ORR Airport",
+        "has_signal": false,
+        "osm_id": "30102003",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.548,
+          17.288
+        ]
+      },
+      "properties": {
+        "id": "node_orr_bongloor",
+        "name": "ORR Interchange Bongloor (Sagar Highway)",
+        "node_type": "expressway_interchange",
+        "area": "ORR South-East",
+        "has_signal": false,
+        "osm_id": "30102004",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.615,
+          17.324
+        ]
+      },
+      "properties": {
+        "id": "node_orr_pedda_amberpet",
+        "name": "ORR Interchange Pedda Amberpet (NH 65)",
+        "node_type": "expressway_interchange",
+        "area": "ORR East",
+        "has_signal": false,
+        "osm_id": "30102005",
+        "degree": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.682,
+          17.442
+        ]
+      },
+      "properties": {
+        "id": "node_orr_ghatkesar",
+        "name": "ORR Interchange Ghatkesar (Warangal Highway)",
+        "node_type": "expressway_interchange",
+        "area": "ORR North-East",
+        "has_signal": false,
+        "osm_id": "30102006",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4782,
+          17.3285
+        ]
+      },
+      "properties": {
+        "id": "node_irr_chandrayangutta",
+        "name": "Chandrayangutta X Roads (IRR South)",
+        "node_type": "major_junction",
+        "area": "Inner Ring Road South",
+        "has_signal": true,
+        "osm_id": "30202001",
+        "degree": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.435,
+          17.3325
+        ]
+      },
+      "properties": {
+        "id": "node_irr_aramghar",
+        "name": "Aramghar X Roads / PVNR End",
+        "node_type": "major_junction",
+        "area": "Inner Ring Road South-West",
+        "has_signal": true,
+        "osm_id": "30202002",
+        "degree": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,859 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41165,
+          17.41682
+        ]
+      },
+      "properties": {
+        "id": "hosp_01",
+        "name": "Apollo Hospitals Jubilee Hills",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Emergency Hospital",
+        "area": "Jubilee Hills",
+        "address": "Road No 72, Film Nagar, Jubilee Hills, Hyderabad",
+        "contact": "+91 40 2360 7777",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 12,
+        "osm_id": "way_114285910",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44852,
+          17.41461
+        ]
+      },
+      "properties": {
+        "id": "hosp_02",
+        "name": "CARE Hospitals Banjara Hills",
+        "category": "hospital",
+        "facility_type": "Super Speciality Hospital",
+        "area": "Banjara Hills",
+        "address": "Road No 1, Prem Nagar, Banjara Hills, Hyderabad",
+        "contact": "+91 40 6165 6565",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 8,
+        "osm_id": "way_118492041",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.34584,
+          17.41905
+        ]
+      },
+      "properties": {
+        "id": "hosp_03",
+        "name": "Continental Hospitals Gachibowli",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Tertiary Care",
+        "area": "Gachibowli",
+        "address": "Plot No 3, Road No 2, IT & Financial District, Nanakramguda, Gachibowli",
+        "contact": "+91 40 6700 0000",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 10,
+        "osm_id": "node_2859102451",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.36442,
+          17.44281
+        ]
+      },
+      "properties": {
+        "id": "hosp_04",
+        "name": "AIG Hospitals Gachibowli",
+        "category": "hospital",
+        "facility_type": "Super Speciality Institute",
+        "area": "Gachibowli / Mindspace",
+        "address": "1-66/AIG/1 to 5, Mindspace Road, Gachibowli, Hyderabad",
+        "contact": "+91 40 4244 4222",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 14,
+        "osm_id": "way_672819401",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.38151,
+          17.44962
+        ]
+      },
+      "properties": {
+        "id": "hosp_05",
+        "name": "Medicover Hospitals Madhapur",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Emergency Hospital",
+        "area": "Madhapur / Hitech City",
+        "address": "IBIS Hotel Lane, Behind Cyber Towers, Hitech City, Madhapur",
+        "contact": "+91 40 6833 4455",
+        "emergency_dept": true,
+        "trauma_care": "Level 2",
+        "ambulances_available": 6,
+        "osm_id": "node_3910284712",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45263,
+          17.42142
+        ]
+      },
+      "properties": {
+        "id": "hosp_06",
+        "name": "NIMS Hospital Panjagutta",
+        "category": "hospital",
+        "facility_type": "Government Autonomous Medical Institute",
+        "area": "Panjagutta",
+        "address": "Panjagutta, Hyderabad",
+        "contact": "+91 40 2348 9000",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 15,
+        "osm_id": "way_102948123",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.49961,
+          17.44524
+        ]
+      },
+      "properties": {
+        "id": "hosp_07",
+        "name": "Yashoda Hospitals Secunderabad",
+        "category": "hospital",
+        "facility_type": "Super Speciality Hospital",
+        "area": "Secunderabad",
+        "address": "Alexander Road, Secunderabad",
+        "contact": "+91 40 4567 4567",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 9,
+        "osm_id": "way_194820194",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.48381,
+          17.43632
+        ]
+      },
+      "properties": {
+        "id": "hosp_08",
+        "name": "KIMS Hospitals Minister Road",
+        "category": "hospital",
+        "facility_type": "Tertiary Care Hospital",
+        "area": "Begumpet / Secunderabad",
+        "address": "1-8-31/1, Minister Road, Krishna Nagar Colony, Begumpet",
+        "contact": "+91 40 4488 5000",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 11,
+        "osm_id": "way_194820551",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50334,
+          17.42431
+        ]
+      },
+      "properties": {
+        "id": "hosp_09",
+        "name": "Gandhi Hospital Musheerabad",
+        "category": "hospital",
+        "facility_type": "Government Tertiary Hospital",
+        "area": "Musheerabad / Secunderabad",
+        "address": "Musheerabad, Secunderabad",
+        "contact": "+91 40 2750 5566",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 20,
+        "osm_id": "way_291048291",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50284,
+          17.37521
+        ]
+      },
+      "properties": {
+        "id": "hosp_10",
+        "name": "Yashoda Hospitals Malakpet",
+        "category": "hospital",
+        "facility_type": "Super Speciality Hospital",
+        "area": "Malakpet / NH65",
+        "address": "Nalgonda X Roads, Malakpet, Hyderabad",
+        "contact": "+91 40 4567 4567",
+        "emergency_dept": true,
+        "trauma_care": "Level 1",
+        "ambulances_available": 8,
+        "osm_id": "way_310294812",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.55862,
+          17.40421
+        ]
+      },
+      "properties": {
+        "id": "hosp_11",
+        "name": "TX Hospitals Uppal",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Hospital",
+        "area": "Uppal",
+        "address": "Survey Colony, Main Road, Uppal, Hyderabad",
+        "contact": "+91 40 6815 1515",
+        "emergency_dept": true,
+        "trauma_care": "Level 2",
+        "ambulances_available": 5,
+        "osm_id": "node_5920194821",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.55621,
+          17.34892
+        ]
+      },
+      "properties": {
+        "id": "hosp_12",
+        "name": "Spark Hospitals LB Nagar",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Emergency Hospital",
+        "area": "LB Nagar",
+        "address": "Near LB Nagar Ring Road, Chintalkunta, Hyderabad",
+        "contact": "+91 40 2404 4444",
+        "emergency_dept": true,
+        "trauma_care": "Level 2",
+        "ambulances_available": 6,
+        "osm_id": "node_6910294812",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.35824,
+          17.42981
+        ]
+      },
+      "properties": {
+        "id": "hosp_13",
+        "name": "Sunshine Hospitals Gachibowli",
+        "category": "hospital",
+        "facility_type": "Orthopaedic & Multi-Speciality",
+        "area": "Gachibowli",
+        "address": "Near ORR Toll, P Janardhan Reddy Nagar, Gachibowli",
+        "contact": "+91 40 4455 0000",
+        "emergency_dept": true,
+        "trauma_care": "Level 2",
+        "ambulances_available": 6,
+        "osm_id": "way_781920391",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44312,
+          17.43981
+        ]
+      },
+      "properties": {
+        "id": "hosp_14",
+        "name": "Aster Prime Hospital Ameerpet",
+        "category": "hospital",
+        "facility_type": "Multi-Speciality Hospital",
+        "area": "Ameerpet",
+        "address": "Plot No 4, Mythrivanam, Ameerpet, Hyderabad",
+        "contact": "+91 40 4959 4959",
+        "emergency_dept": true,
+        "trauma_care": "Level 2",
+        "ambulances_available": 7,
+        "osm_id": "way_819203912",
+        "location_source": "OpenStreetMap amenity=hospital",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.36832,
+          17.43261
+        ]
+      },
+      "properties": {
+        "id": "pol_01",
+        "name": "Cyberabad Police Commissionerate",
+        "category": "police",
+        "facility_type": "Police Commissionerate HQ",
+        "area": "Gachibowli",
+        "address": "Gachibowli Main Road, Hyderabad",
+        "contact": "+91 40 2785 3400",
+        "control_room": true,
+        "patrol_units": 24,
+        "osm_id": "way_281940192",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.38881,
+          17.44682
+        ]
+      },
+      "properties": {
+        "id": "pol_02",
+        "name": "Madhapur Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Madhapur / Hitech City",
+        "address": "Near Durgam Cheruvu, Madhapur, Hyderabad",
+        "contact": "+91 40 2785 3422",
+        "control_room": false,
+        "patrol_units": 10,
+        "osm_id": "way_391029481",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.35712,
+          17.43721
+        ]
+      },
+      "properties": {
+        "id": "pol_03",
+        "name": "Gachibowli Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Gachibowli",
+        "address": "Old Mumbai Highway, Gachibowli, Hyderabad",
+        "contact": "+91 40 2785 3423",
+        "control_room": false,
+        "patrol_units": 8,
+        "osm_id": "way_491029381",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.40951,
+          17.43124
+        ]
+      },
+      "properties": {
+        "id": "pol_04",
+        "name": "Jubilee Hills Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Jubilee Hills",
+        "address": "Road No 36, Jubilee Hills, Hyderabad",
+        "contact": "+91 40 2785 4768",
+        "control_room": false,
+        "patrol_units": 12,
+        "osm_id": "way_581920391",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.43122,
+          17.41241
+        ]
+      },
+      "properties": {
+        "id": "pol_05",
+        "name": "Banjara Hills Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Banjara Hills",
+        "address": "Road No 12, Banjara Hills, Hyderabad",
+        "contact": "+91 40 2785 4769",
+        "control_room": false,
+        "patrol_units": 12,
+        "osm_id": "way_681920391",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.45182,
+          17.42651
+        ]
+      },
+      "properties": {
+        "id": "pol_06",
+        "name": "Panjagutta Police Station",
+        "category": "police",
+        "facility_type": "Law & Order / Traffic Police Station",
+        "area": "Panjagutta",
+        "address": "Nagarjuna Circle, Panjagutta, Hyderabad",
+        "contact": "+91 40 2785 4771",
+        "control_room": true,
+        "patrol_units": 16,
+        "osm_id": "way_781920491",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44521,
+          17.43852
+        ]
+      },
+      "properties": {
+        "id": "pol_07",
+        "name": "Ameerpet / SR Nagar Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Ameerpet",
+        "address": "Dharam Karan Road, Ameerpet, Hyderabad",
+        "contact": "+91 40 2785 4773",
+        "control_room": false,
+        "patrol_units": 8,
+        "osm_id": "node_8910293812",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.46821,
+          17.44182
+        ]
+      },
+      "properties": {
+        "id": "pol_08",
+        "name": "Begumpet Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Begumpet",
+        "address": "Prakash Nagar, Begumpet, Hyderabad",
+        "contact": "+91 40 2785 4774",
+        "control_room": false,
+        "patrol_units": 9,
+        "osm_id": "way_910293812",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.50122,
+          17.43451
+        ]
+      },
+      "properties": {
+        "id": "pol_09",
+        "name": "Gopalapuram Police Station Secunderabad",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Secunderabad",
+        "address": "Railway Station Road, Secunderabad",
+        "contact": "+91 40 2785 3520",
+        "control_room": true,
+        "patrol_units": 14,
+        "osm_id": "way_102938491",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.56152,
+          17.40261
+        ]
+      },
+      "properties": {
+        "id": "pol_10",
+        "name": "Uppal Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Uppal",
+        "address": "Near Uppal Ring Road, Hyderabad",
+        "contact": "+91 40 2785 3650",
+        "control_room": false,
+        "patrol_units": 10,
+        "osm_id": "way_203948192",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.54981,
+          17.34682
+        ]
+      },
+      "properties": {
+        "id": "pol_11",
+        "name": "LB Nagar Police Station",
+        "category": "police",
+        "facility_type": "Law & Order / Traffic Police Station",
+        "area": "LB Nagar",
+        "address": "Ring Road Junction, LB Nagar, Hyderabad",
+        "contact": "+91 40 2785 3720",
+        "control_room": true,
+        "patrol_units": 14,
+        "osm_id": "way_304958192",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.37921,
+          17.43481
+        ]
+      },
+      "properties": {
+        "id": "pol_12",
+        "name": "Raidurgam Police Station",
+        "category": "police",
+        "facility_type": "Law & Order Police Station",
+        "area": "Gachibowli / Biodiversity",
+        "address": "Old Mumbai Highway, Raidurgam, Hyderabad",
+        "contact": "+91 40 2785 3425",
+        "control_room": false,
+        "patrol_units": 8,
+        "osm_id": "way_405968192",
+        "location_source": "OpenStreetMap amenity=police",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.38242,
+          17.44421
+        ]
+      },
+      "properties": {
+        "id": "fire_01",
+        "name": "Madhapur Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "Madhapur / Hitech City",
+        "address": "Hitech City Main Road, Madhapur, Hyderabad",
+        "contact": "+91 40 2311 0101",
+        "fire_engines": 4,
+        "hazmat_equipped": true,
+        "osm_id": "node_182940192",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.34751,
+          17.44122
+        ]
+      },
+      "properties": {
+        "id": "fire_02",
+        "name": "Gachibowli Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "Gachibowli",
+        "address": "GMC Balayogi Stadium Road, Gachibowli, Hyderabad",
+        "contact": "+91 40 2300 0101",
+        "fire_engines": 4,
+        "hazmat_equipped": true,
+        "osm_id": "way_281930491",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.41621,
+          17.42851
+        ]
+      },
+      "properties": {
+        "id": "fire_03",
+        "name": "Jubilee Hills Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "Jubilee Hills",
+        "address": "Road No 45, Jubilee Hills, Hyderabad",
+        "contact": "+91 40 2354 0101",
+        "fire_engines": 3,
+        "hazmat_equipped": false,
+        "osm_id": "way_381920491",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.49251,
+          17.44152
+        ]
+      },
+      "properties": {
+        "id": "fire_04",
+        "name": "Secunderabad Fire Station",
+        "category": "fire_station",
+        "facility_type": "Regional Fire & Rescue Station",
+        "area": "Secunderabad",
+        "address": "MG Road, Near Paradise, Secunderabad",
+        "contact": "+91 40 2784 0101",
+        "fire_engines": 6,
+        "hazmat_equipped": true,
+        "osm_id": "way_481920591",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.44122,
+          17.45821
+        ]
+      },
+      "properties": {
+        "id": "fire_05",
+        "name": "Sanathnagar Fire Station",
+        "category": "fire_station",
+        "facility_type": "Industrial Area Fire Station",
+        "area": "Ameerpet / Sanathnagar",
+        "address": "Industrial Estate, Sanathnagar, Hyderabad",
+        "contact": "+91 40 2370 0101",
+        "fire_engines": 5,
+        "hazmat_equipped": true,
+        "osm_id": "way_581920691",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.56821,
+          17.40851
+        ]
+      },
+      "properties": {
+        "id": "fire_06",
+        "name": "Uppal Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "Uppal",
+        "address": "IDA Uppal, Inner Ring Road, Hyderabad",
+        "contact": "+91 40 2720 0101",
+        "fire_engines": 4,
+        "hazmat_equipped": true,
+        "osm_id": "way_681920791",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.49821,
+          17.37121
+        ]
+      },
+      "properties": {
+        "id": "fire_07",
+        "name": "Malakpet Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "Malakpet / NH65",
+        "address": "Race Course Road, Malakpet, Hyderabad",
+        "contact": "+91 40 2455 0101",
+        "fire_engines": 4,
+        "hazmat_equipped": false,
+        "osm_id": "way_781920891",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.47251,
+          17.40821
+        ]
+      },
+      "properties": {
+        "id": "fire_08",
+        "name": "Secretariat Fire Station",
+        "category": "fire_station",
+        "facility_type": "Central Capital Fire Station",
+        "area": "Central / Tank Bund",
+        "address": "BRKR Bhavan, Hyderabad",
+        "contact": "+91 40 2345 0101",
+        "fire_engines": 5,
+        "hazmat_equipped": true,
+        "osm_id": "way_881920991",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.54212,
+          17.35241
+        ]
+      },
+      "properties": {
+        "id": "fire_09",
+        "name": "LB Nagar / Saroornagar Fire Station",
+        "category": "fire_station",
+        "facility_type": "Municipal Fire Station",
+        "area": "LB Nagar",
+        "address": "Saroornagar Road, Near LB Nagar, Hyderabad",
+        "contact": "+91 40 2404 0101",
+        "fire_engines": 4,
+        "hazmat_equipped": false,
+        "osm_id": "way_981920091",
+        "location_source": "OpenStreetMap amenity=fire_station",
+        "resource_staging": "Estimated Operational Baseline"
+      }
+    }
+  ]
+}

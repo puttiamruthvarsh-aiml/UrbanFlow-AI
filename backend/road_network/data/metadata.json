@@ -1,0 +1,28 @@
+{
+  "total_nodes": 56,
+  "total_directed_edges": 126,
+  "total_unique_road_segments": 64,
+  "unique_osm_ways": 64,
+  "road_segment_classification_counts": {
+    "primary": 30,
+    "secondary": 13,
+    "trunk": 13,
+    "motorway": 8
+  },
+  "directed_edge_classification_counts": {
+    "primary": 60,
+    "secondary": 24,
+    "trunk": 26,
+    "motorway": 16
+  },
+  "is_weakly_connected": true,
+  "strongly_connected_components": 1,
+  "total_network_length_km": 377.92,
+  "average_degree": 4.5,
+  "geographic_extent": {
+    "min_lat": 17.265,
+    "max_lat": 17.4721,
+    "min_lon": 78.3385,
+    "max_lon": 78.682
+  }
+}

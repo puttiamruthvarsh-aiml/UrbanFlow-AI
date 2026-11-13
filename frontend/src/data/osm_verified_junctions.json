@@ -1,0 +1,42 @@
+{
+  "node_panjagutta": {
+    "name": "Panjagutta, Hyderabad",
+    "lat": 17.4254245,
+    "lon": 78.4517519,
+    "osm_type": "node",
+    "osm_id": 2461447806,
+    "display_name": "Panjagutta, Ward 91 Khairatabad, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Khairatabad mandal, Hyderabad, Telangana, 500082, India"
+  },
+  "node_uppal_ring": {
+    "name": "Uppal X Roads, Hyderabad",
+    "lat": 17.4007724,
+    "lon": 78.5604947,
+    "osm_type": "node",
+    "osm_id": 2584772012,
+    "display_name": "Uppal 'X' Roads, Uppal Skywalk, Venkateswara Nagar, Ward 10 Uppal, Greater Hyderabad Municipal Corporation East Zone, Hyderabad, Uppal mandal, Medchal\u2013Malkajgiri, Telangana, 500039, India"
+  },
+  "node_masab_tank": {
+    "name": "Masab Tank, Hyderabad",
+    "lat": 17.4029622,
+    "lon": 78.450754,
+    "osm_type": "node",
+    "osm_id": 2935023028,
+    "display_name": "Masab Tank, Ward 74 Ahmed Nagar, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Asif Nagar mandal, Hyderabad, Telangana, 500057, India"
+  },
+  "node_mehdipatnam": {
+    "name": "Mehdipatnam, Hyderabad",
+    "lat": 17.3942627,
+    "lon": 78.4342514,
+    "osm_type": "node",
+    "osm_id": 2461496899,
+    "display_name": "Mehdipatnam, Ward 70 Mehdipatnam, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Asif Nagar mandal, Hyderabad, Telangana, 500028, India"
+  },
+  "node_gachibowli_flyover": {
+    "name": "Gachibowli Flyover, Hyderabad",
+    "lat": 17.4347168,
+    "lon": 78.3684207,
+    "osm_type": "way",
+    "osm_id": 906111926,
+    "display_name": "Gachibowli Flyover, Ward 104 Kondapur, Greater Hyderabad Municipal Corporation West Zone, Hyderabad, Serilingampalle mandal, Ranga Reddy, Telangana, 500032, India"
+  }
+}
