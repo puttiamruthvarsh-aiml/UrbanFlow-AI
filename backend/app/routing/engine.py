@@ -171,6 +171,14 @@ class DynamicRoutingEngine:
             if q_lower in data["area"].lower() or q_lower in nid.lower():
                 return nid
 
+        # 4. Multi-token match across name, area, and ID
+        tokens = [t.strip(" ,.-") for t in q_lower.split() if len(t.strip(" ,.-")) > 1]
+        if len(tokens) > 1:
+            for nid, data in self.nodes.items():
+                combined = f"{data['name'].lower()} {data['area'].lower()} {nid.lower()}"
+                if all(t in combined for t in tokens):
+                    return nid
+
         return None
 
     def find_nearest_node(self, lat: float, lon: float) -> str:

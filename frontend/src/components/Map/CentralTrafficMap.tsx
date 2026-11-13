@@ -40,6 +40,7 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<maplibregl.Marker[]>([]);
+  const routeMarkersRef = useRef<maplibregl.Marker[]>([]);
 
   const [layers, setLayers] = useState<LayerVisibilityState>({
     roads: true,
@@ -646,13 +647,17 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
       const source = map.getSource('user-route-source') as maplibregl.GeoJSONSource;
       if (!source) return;
 
+      // Clear existing route waypoint markers
+      routeMarkersRef.current.forEach(m => m.remove());
+      routeMarkersRef.current = [];
+
       if (routeGeoJSON && (routeGeoJSON.features?.length > 0 || routeGeoJSON.type === 'Feature')) {
         const featCollection = routeGeoJSON.type === 'FeatureCollection' 
           ? routeGeoJSON 
           : { type: 'FeatureCollection', features: [routeGeoJSON] };
         source.setData(featCollection);
 
-        // Smoothly fit bounds
+        // Smoothly fit bounds and place waypoint markers
         const coords: [number, number][] = [];
         featCollection.features.forEach((f: any) => {
           if (f.geometry?.type === 'LineString') {
@@ -668,6 +673,34 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
             maxZoom: 15,
             duration: 900
           });
+
+          // 1. Origin Waypoint Marker (Green)
+          const startEl = document.createElement('div');
+          startEl.className = 'route-start-marker';
+          startEl.innerHTML = `
+            <div class="flex items-center gap-1 bg-emerald-950/90 border-2 border-emerald-400 text-emerald-300 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold shadow-lg shadow-emerald-950/80 backdrop-blur-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>START</span>
+            </div>
+          `;
+          const startMarker = new maplibregl.Marker({ element: startEl, anchor: 'bottom' })
+            .setLngLat(coords[0])
+            .addTo(map);
+          routeMarkersRef.current.push(startMarker);
+
+          // 2. Destination Waypoint Marker (Red)
+          const endEl = document.createElement('div');
+          endEl.className = 'route-end-marker';
+          endEl.innerHTML = `
+            <div class="flex items-center gap-1 bg-red-950/90 border-2 border-red-400 text-red-300 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold shadow-lg shadow-red-950/80 backdrop-blur-sm">
+              <span class="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+              <span>DEST</span>
+            </div>
+          `;
+          const endMarker = new maplibregl.Marker({ element: endEl, anchor: 'bottom' })
+            .setLngLat(coords[coords.length - 1])
+            .addTo(map);
+          routeMarkersRef.current.push(endMarker);
         }
       } else {
         source.setData({ type: 'FeatureCollection', features: [] });

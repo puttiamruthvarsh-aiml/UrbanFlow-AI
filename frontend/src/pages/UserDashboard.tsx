@@ -22,7 +22,9 @@ import {
   RefreshCw,
   Zap,
   ArrowRight,
-  TrendingDown
+  TrendingDown,
+  Gauge,
+  Milestone
 } from 'lucide-react';
 
 import { 
@@ -33,8 +35,8 @@ import { fetchDemoState } from '../services/demoApi';
 
 const POPULAR_LOCATIONS = [
   { label: 'Cyber Towers (Hitech City)', value: 'Cyber Towers Junction' },
-  { label: 'Clock Tower (Secunderabad)', value: 'Clock Tower, Secunderabad' },
-  { label: 'Gachibowli Junction', value: 'Gachibowli Flyover Junction' },
+  { label: 'Secunderabad Clock Tower', value: 'Secunderabad Clock Tower Junction' },
+  { label: 'Gachibowli Flyover', value: 'Gachibowli Flyover Junction' },
   { label: 'Jubilee Hills Checkpost', value: 'Jubilee Hills Checkpost' },
   { label: 'Banjara Hills Road 1', value: 'Banjara Hills Road 1' },
   { label: 'Ameerpet Metro Junction', value: 'Ameerpet Metro Intersection' },
@@ -46,13 +48,16 @@ export const UserDashboard: React.FC = () => {
   const [activeNav, setActiveNav] = useState<string>('live_map');
   const [selectedHub, setSelectedHub] = useState<string>('all');
   const [startPoint, setStartPoint] = useState<string>('Cyber Towers Junction');
-  const [endPoint, setEndPoint] = useState<string>('Clock Tower, Secunderabad');
+  const [endPoint, setEndPoint] = useState<string>('Secunderabad Clock Tower Junction');
   const [selectedEntity, setSelectedEntity] = useState<SelectedMapEntity>(null);
 
-  // Routing State
-  const [algorithm, setAlgorithm] = useState<'a_star' | 'dijkstra'>('a_star');
-  const [preference, setPreference] = useState<'time' | 'distance'>('time');
-  const [routeResult, setRouteResult] = useState<DynamicRouteResult | null>(null);
+  // Map Click Selection Mode (Click 1 sets Start, Click 2 sets Destination)
+  const [clickTargetMode, setClickTargetMode] = useState<'start' | 'end'>('start');
+
+  // Dual Route Computation (Fastest via A* vs Shortest via Dijkstra)
+  const [fastestRoute, setFastestRoute] = useState<DynamicRouteResult | null>(null);
+  const [shortestRoute, setShortestRoute] = useState<DynamicRouteResult | null>(null);
+  const [activeRouteTab, setActiveRouteTab] = useState<'fastest' | 'shortest'>('fastest');
   const [isCalculating, setIsCalculating] = useState<boolean>(false);
   const [routingError, setRoutingError] = useState<string | null>(null);
 
@@ -61,44 +66,94 @@ export const UserDashboard: React.FC = () => {
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [rerouteNotice, setRerouteNotice] = useState<string | null>(null);
 
-  const routeResultRef = useRef(routeResult);
-  routeResultRef.current = routeResult;
+  // Compute Both Fastest and Shortest Routes simultaneously
+  const handleCalculateRoutes = useCallback(async (src?: string, dest?: string) => {
+    const origin = (src || startPoint).trim();
+    const destination = (dest || endPoint).trim();
 
-  // Compute Route
-  const handleCalculateRoute = useCallback(async () => {
-    if (!startPoint || !endPoint) return;
+    if (!origin || !destination) return;
 
     setIsCalculating(true);
     setRoutingError(null);
     setRerouteNotice(null);
 
     try {
-      const result = await calculateDynamicRoute({
-        source: startPoint,
-        destination: endPoint,
-        algorithm,
-        preference,
-        include_alternative: true
-      });
+      // 1. Calculate Fastest Route (Optimized for Time using A*)
+      // 2. Calculate Shortest Route (Optimized for Distance using Dijkstra)
+      const [fastestRes, shortestRes] = await Promise.all([
+        calculateDynamicRoute({
+          source: origin,
+          destination: destination,
+          algorithm: 'a_star',
+          preference: 'time',
+          include_alternative: true
+        }),
+        calculateDynamicRoute({
+          source: origin,
+          destination: destination,
+          algorithm: 'dijkstra',
+          preference: 'distance',
+          include_alternative: false
+        })
+      ]);
 
-      setRouteResult(result);
+      setFastestRoute(fastestRes);
+      setShortestRoute(shortestRes);
 
-      if (result.avoided_blocked_roads && result.avoided_blocked_roads.length > 0) {
-        setRerouteNotice(`Avoided ${result.avoided_blocked_roads.length} blocked road segment(s) along nominal path.`);
+      if (fastestRes.avoided_blocked_roads && fastestRes.avoided_blocked_roads.length > 0) {
+        setRerouteNotice(`Rerouted: Avoided ${fastestRes.avoided_blocked_roads.length} active road blockage(s) along nominal path.`);
       }
     } catch (err: any) {
-      setRoutingError(err.message || 'Failed to calculate dynamic route.');
+      setRoutingError(err.message || 'Failed to calculate routes.');
     } finally {
       setIsCalculating(false);
     }
-  }, [startPoint, endPoint, algorithm, preference]);
+  }, [startPoint, endPoint]);
 
-  // Initial Route Calculation on Mount
+  // Initial Calculation on Mount
   useEffect(() => {
-    handleCalculateRoute();
+    handleCalculateRoutes();
   }, []);
 
+  // Map Click: Click 2 places to set start and destination directly!
+  const handleMapEntityClick = (entity: SelectedMapEntity) => {
+    setSelectedEntity(entity);
+    if (!entity) return;
+
+    let locationName = '';
+    if (entity.type === 'junction') {
+      locationName = entity.data.name;
+    } else if (entity.type === 'road') {
+      locationName = entity.data.from_name || entity.data.name;
+    } else if (entity.type === 'signal') {
+      locationName = entity.data.name || entity.data.junction_name;
+    } else if (entity.type === 'emergency') {
+      locationName = entity.data.name;
+    }
+
+    if (!locationName) return;
+
+    if (clickTargetMode === 'start') {
+      setStartPoint(locationName);
+      setClickTargetMode('end');
+      // If destination already exists, recalculate immediately
+      if (endPoint && endPoint !== locationName) {
+        handleCalculateRoutes(locationName, endPoint);
+      }
+    } else {
+      setEndPoint(locationName);
+      setClickTargetMode('start');
+      if (startPoint && startPoint !== locationName) {
+        handleCalculateRoutes(startPoint, locationName);
+      }
+    }
+  };
+
   // Poll Shared Simulation State & Automatically Recalculate If Route is Affected
+  const activeRoute = activeRouteTab === 'fastest' ? fastestRoute : shortestRoute;
+  const activeRouteRef = useRef(activeRoute);
+  activeRouteRef.current = activeRoute;
+
   useEffect(() => {
     let active = true;
 
@@ -115,25 +170,9 @@ export const UserDashboard: React.FC = () => {
         if (conditionsChanged && state.last_updated !== lastUpdated) {
           setLastUpdated(state.last_updated);
 
-          // If a route is already computed, auto-recalculate to react to real-time incident changes
-          if (routeResultRef.current && routeResultRef.current.status === 'success') {
-            console.log('Incident state changed in shared backend. Recalculating user trip route...');
-            const updated = await calculateDynamicRoute({
-              source: startPoint,
-              destination: endPoint,
-              algorithm,
-              preference,
-              include_alternative: true
-            });
-
-            if (active) {
-              setRouteResult(updated);
-              if (updated.avoided_blocked_roads && updated.avoided_blocked_roads.length > 0) {
-                setRerouteNotice(`Route dynamically updated! Rerouted around active blockage: ${updated.avoided_blocked_roads[0]}`);
-              } else {
-                setRerouteNotice('Route refreshed with latest traffic flow conditions.');
-              }
-            }
+          if (activeRouteRef.current && activeRouteRef.current.status === 'success') {
+            console.log('Incident state changed in shared backend. Recalculating routes...');
+            handleCalculateRoutes();
           }
         }
       } catch (err) {
@@ -147,7 +186,7 @@ export const UserDashboard: React.FC = () => {
       active = false;
       clearInterval(interval);
     };
-  }, [roadConditions, lastUpdated, startPoint, endPoint, algorithm, preference]);
+  }, [roadConditions, lastUpdated, handleCalculateRoutes]);
 
   return (
     <div className="flex h-[calc(100vh-4rem)] overflow-hidden select-none">
@@ -162,38 +201,67 @@ export const UserDashboard: React.FC = () => {
       {/* Main Workspace Area */}
       <main className="flex-1 flex flex-col xl:flex-row overflow-hidden relative">
         {/* Left Side: Planning / Info Card Drawer (Desktop) */}
-        <div className="w-full xl:w-[410px] bg-[#0E1526]/95 border-r border-slate-800/80 p-4 overflow-y-auto space-y-4 shrink-0">
+        <div className="w-full xl:w-[420px] bg-[#0E1526]/95 border-r border-slate-800/80 p-4 overflow-y-auto space-y-4 shrink-0">
           
           {/* Trip Planning Box */}
           <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3.5 shadow-xl">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-slate-200 flex items-center gap-1.5 font-mono uppercase tracking-wider">
                 <Navigation className="w-4 h-4 text-blue-400" />
-                Dynamic Trip Planner
+                Click 2 Places Trip Planner
               </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800 font-semibold flex items-center gap-1">
                 <Zap className="w-2.5 h-2.5 text-cyan-400" />
-                A* / DIJKSTRA
+                A* &amp; DIJKSTRA
               </span>
             </div>
 
-            {/* Inputs */}
+            {/* Click-on-Map Selection Indicator */}
+            <div className="p-2 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-xs font-mono">
+              <span className="text-[10px] text-slate-400">Map Click Mode:</span>
+              <div className="flex gap-1">
+                <button
+                  type="button"
+                  onClick={() => setClickTargetMode('start')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors ${
+                    clickTargetMode === 'start'
+                      ? 'bg-emerald-600 text-white shadow-sm'
+                      : 'bg-slate-900 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  🟢 1st Click (Start)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setClickTargetMode('end')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors ${
+                    clickTargetMode === 'end'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-slate-900 text-slate-400 hover:text-white'
+                  }`}
+                >
+                  🔴 2nd Click (Dest)
+                </button>
+              </div>
+            </div>
+
+            {/* Origin & Destination Inputs */}
             <div className="space-y-2 text-xs">
               <div>
                 <label className="text-[10px] text-slate-400 block mb-1 font-mono flex items-center justify-between">
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 text-emerald-300 font-bold">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    Start Location (Origin)
+                    1. Start Location (Origin)
                   </span>
-                  <span className="text-[9px] text-slate-500">Node or Area</span>
+                  <span className="text-[9px] text-slate-500 font-normal">Click map or type</span>
                 </label>
                 <div className="relative">
                   <input
                     type="text"
                     value={startPoint}
                     onChange={(e) => setStartPoint(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-blue-500 font-medium"
-                    placeholder="Enter origin junction..."
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-emerald-500 font-medium"
+                    placeholder="Click on map or search origin..."
                   />
                   <MapPin className="w-3.5 h-3.5 text-emerald-400 absolute right-3 top-2.5" />
                 </div>
@@ -201,10 +269,12 @@ export const UserDashboard: React.FC = () => {
 
               <div className="flex justify-center -my-1">
                 <button 
+                  type="button"
                   onClick={() => {
                     const temp = startPoint;
                     setStartPoint(endPoint);
                     setEndPoint(temp);
+                    handleCalculateRoutes(endPoint, temp);
                   }}
                   className="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
                   title="Swap endpoints"
@@ -215,80 +285,37 @@ export const UserDashboard: React.FC = () => {
 
               <div>
                 <label className="text-[10px] text-slate-400 block mb-1 font-mono flex items-center justify-between">
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 text-red-300 font-bold">
                     <span className="w-2 h-2 rounded-full bg-red-400"></span>
-                    Destination Location
+                    2. Destination Location
                   </span>
-                  <span className="text-[9px] text-slate-500">Node or Area</span>
+                  <span className="text-[9px] text-slate-500 font-normal">Click map or type</span>
                 </label>
                 <div className="relative">
                   <input
                     type="text"
                     value={endPoint}
                     onChange={(e) => setEndPoint(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-blue-500 font-medium"
-                    placeholder="Enter destination junction..."
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-slate-200 text-xs focus:outline-none focus:border-red-500 font-medium"
+                    placeholder="Click on map or search destination..."
                   />
                   <MapPin className="w-3.5 h-3.5 text-red-400 absolute right-3 top-2.5" />
                 </div>
               </div>
             </div>
 
-            {/* Pathfinding Configuration Toggles */}
-            <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] font-mono">
-              <div>
-                <label className="text-[10px] text-slate-400 block mb-1">Algorithm</label>
-                <div className="grid grid-cols-2 gap-1 p-0.5 bg-slate-950 rounded-lg border border-slate-800">
-                  <button
-                    onClick={() => setAlgorithm('a_star')}
-                    className={`py-1 text-center rounded transition-colors text-[10px] font-bold ${
-                      algorithm === 'a_star' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    A*
-                  </button>
-                  <button
-                    onClick={() => setAlgorithm('dijkstra')}
-                    className={`py-1 text-center rounded transition-colors text-[10px] font-bold ${
-                      algorithm === 'dijkstra' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    Dijkstra
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label className="text-[10px] text-slate-400 block mb-1">Goal</label>
-                <div className="grid grid-cols-2 gap-1 p-0.5 bg-slate-950 rounded-lg border border-slate-800">
-                  <button
-                    onClick={() => setPreference('time')}
-                    className={`py-1 text-center rounded transition-colors text-[10px] font-bold ${
-                      preference === 'time' ? 'bg-cyan-600 text-white' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    Fastest
-                  </button>
-                  <button
-                    onClick={() => setPreference('distance')}
-                    className={`py-1 text-center rounded transition-colors text-[10px] font-bold ${
-                      preference === 'distance' ? 'bg-cyan-600 text-white' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    Shortest
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Destination Chips */}
+            {/* Quick Location Chips */}
             <div className="space-y-1">
-              <span className="text-[10px] font-mono text-slate-500 block">Popular Destinations:</span>
+              <span className="text-[10px] font-mono text-slate-500 block">Popular Hyderabad Hubs:</span>
               <div className="flex flex-wrap gap-1">
                 {POPULAR_LOCATIONS.slice(0, 4).map((loc, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setEndPoint(loc.value)}
+                    type="button"
+                    onClick={() => {
+                      setEndPoint(loc.value);
+                      handleCalculateRoutes(startPoint, loc.value);
+                    }}
                     className="text-[9px] px-2 py-0.5 rounded-full bg-slate-950 border border-slate-800 text-slate-400 hover:text-cyan-300 hover:border-cyan-800 transition-colors"
                   >
                     {loc.label.split(' ')[0]}
@@ -307,19 +334,20 @@ export const UserDashboard: React.FC = () => {
 
             {/* Calculate Button */}
             <button
-              onClick={handleCalculateRoute}
+              type="button"
+              onClick={() => handleCalculateRoutes()}
               disabled={isCalculating}
-              className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 font-bold font-mono text-xs text-white shadow-lg shadow-blue-950/40 flex items-center justify-center gap-2 transition-all"
+              className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 font-bold font-mono text-xs text-white shadow-lg shadow-blue-950/40 flex items-center justify-center gap-2 transition-all"
             >
               {isCalculating ? (
                 <>
                   <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                  <span>Computing Optimal Dynamic Route...</span>
+                  <span>Calculating Shortest &amp; Fastest Routes...</span>
                 </>
               ) : (
                 <>
                   <Navigation className="w-3.5 h-3.5" />
-                  <span>Calculate Dynamic Route</span>
+                  <span>Compute Shortest &amp; Fastest Ways</span>
                 </>
               )}
             </button>
@@ -333,89 +361,119 @@ export const UserDashboard: React.FC = () => {
             </div>
           )}
 
-          {/* Route Performance Metrics Card */}
-          {routeResult && routeResult.status === 'success' && (
-            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3 text-xs shadow-xl">
+          {/* DUAL ROUTE COMPARISON (FASTEST vs SHORTEST) */}
+          {(fastestRoute || shortestRoute) && (
+            <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3 shadow-xl">
               <div className="flex items-center justify-between pb-2 border-b border-slate-800">
                 <span className="font-bold text-slate-200 font-mono uppercase text-[11px] flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-cyan-400" />
-                  Trip Metrics
+                  <Gauge className="w-4 h-4 text-cyan-400" />
+                  Route Comparison
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-semibold uppercase">
-                  {routeResult.algorithm_used}
+                <span className="text-[10px] font-mono text-slate-400">
+                  Select view on map
                 </span>
               </div>
 
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <div className="p-2 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-slate-400 block">Est. Time</span>
-                  <span className="text-lg font-black font-mono text-cyan-400">
-                    {routeResult.estimated_time_min} <span className="text-xs font-normal">min</span>
-                  </span>
-                </div>
-
-                <div className="p-2 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-slate-400 block">Distance</span>
-                  <span className="text-lg font-black font-mono text-white">
-                    {routeResult.total_distance_km} <span className="text-xs font-normal">km</span>
-                  </span>
-                </div>
-
-                <div className="p-2 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-slate-400 block">Delay</span>
-                  <span className={`text-lg font-black font-mono ${routeResult.incident_delay_min > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>
-                    +{routeResult.incident_delay_min} <span className="text-xs font-normal">min</span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Blocked Road Avoidance Tag */}
-              {routeResult.avoided_blocked_roads && routeResult.avoided_blocked_roads.length > 0 && (
-                <div className="p-2.5 rounded-xl bg-red-950/40 border border-red-900/60 text-red-200 text-[11px] space-y-1">
-                  <div className="font-bold flex items-center gap-1">
-                    <ShieldAlert className="w-3.5 h-3.5 text-red-400" />
-                    Avoided Active Incidents:
-                  </div>
-                  <div className="font-mono text-[10px] text-slate-300 pl-4.5">
-                    {routeResult.avoided_blocked_roads.map((r, i) => (
-                      <span key={i} className="inline-block bg-red-950 px-1.5 py-0.5 rounded mr-1 mb-1 border border-red-800 text-red-300">
-                        ⛔ {r}
+              {/* Toggle Between Fastest and Shortest Route on Map */}
+              <div className="grid grid-cols-2 gap-2">
+                {/* 1. Fastest Route Card */}
+                {fastestRoute && fastestRoute.status === 'success' && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveRouteTab('fastest')}
+                    className={`p-3 rounded-xl border text-left transition-all ${
+                      activeRouteTab === 'fastest'
+                        ? 'bg-gradient-to-b from-cyan-950/80 to-blue-950/80 border-cyan-500 shadow-lg shadow-cyan-950/30'
+                        : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-bold font-mono text-cyan-300 flex items-center gap-1">
+                        <Zap className="w-3 h-3 text-cyan-400" />
+                        FASTEST
                       </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Alternative Route Detour Comparison */}
-              {routeResult.alternative_route && (
-                <div className="p-2.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
-                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-400">
-                    <span className="text-slate-300 font-semibold">Alternative Detour Option:</span>
-                    <span>+{routeResult.alternative_route.difference_time_min} min</span>
-                  </div>
-                  <p className="text-[10px] text-slate-400 leading-snug">
-                    {routeResult.alternative_route.description} ({routeResult.alternative_route.total_distance_km} km)
-                  </p>
-                </div>
-              )}
-
-              {/* Turn-by-Turn Directions Snippet */}
-              <div className="space-y-1.5 pt-1">
-                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
-                  Route Path ({routeResult.steps?.length || 0} segments):
-                </span>
-                <div className="max-h-36 overflow-y-auto space-y-1 pr-1 font-mono text-[10px]">
-                  {routeResult.steps?.map((step) => (
-                    <div key={step.step_number} className="p-1.5 rounded-lg bg-slate-950/60 border border-slate-800/80 flex items-center justify-between text-slate-300">
-                      <div className="truncate mr-2">
-                        <span className="text-cyan-400 mr-1.5">{step.step_number}.</span>
-                        <span>{step.road_name}</span>
-                      </div>
-                      <span className="text-slate-500 shrink-0">{step.distance_m}m</span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-cyan-950 text-cyan-300 border border-cyan-800 font-semibold">
+                        A*
+                      </span>
                     </div>
-                  ))}
-                </div>
+                    <div className="text-xl font-black font-mono text-white">
+                      {fastestRoute.estimated_time_min} <span className="text-xs font-normal text-slate-400">min</span>
+                    </div>
+                    <div className="text-[10px] font-mono text-slate-400">
+                      {fastestRoute.total_distance_km} km • Min Time
+                    </div>
+                  </button>
+                )}
+
+                {/* 2. Shortest Route Card */}
+                {shortestRoute && shortestRoute.status === 'success' && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveRouteTab('shortest')}
+                    className={`p-3 rounded-xl border text-left transition-all ${
+                      activeRouteTab === 'shortest'
+                        ? 'bg-gradient-to-b from-emerald-950/80 to-slate-950/80 border-emerald-500 shadow-lg shadow-emerald-950/30'
+                        : 'bg-slate-950/80 border-slate-800 hover:border-slate-700'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-bold font-mono text-emerald-300 flex items-center gap-1">
+                        <Milestone className="w-3 h-3 text-emerald-400" />
+                        SHORTEST
+                      </span>
+                      <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-semibold">
+                        DIJKSTRA
+                      </span>
+                    </div>
+                    <div className="text-xl font-black font-mono text-white">
+                      {shortestRoute.total_distance_km} <span className="text-xs font-normal text-slate-400">km</span>
+                    </div>
+                    <div className="text-[10px] font-mono text-slate-400">
+                      {shortestRoute.estimated_time_min} min • Min Dist
+                    </div>
+                  </button>
+                )}
               </div>
+
+              {/* Active Route Details */}
+              {activeRoute && activeRoute.status === 'success' && (
+                <div className="space-y-2 pt-2 border-t border-slate-800 text-xs">
+                  {/* Avoided Incidents */}
+                  {activeRoute.avoided_blocked_roads && activeRoute.avoided_blocked_roads.length > 0 && (
+                    <div className="p-2.5 rounded-xl bg-red-950/40 border border-red-900/60 text-red-200 text-[11px] space-y-1">
+                      <div className="font-bold flex items-center gap-1">
+                        <ShieldAlert className="w-3.5 h-3.5 text-red-400" />
+                        Avoided Blocked Incident Roads:
+                      </div>
+                      <div className="font-mono text-[10px] text-slate-300">
+                        {activeRoute.avoided_blocked_roads.map((r, i) => (
+                          <span key={i} className="inline-block bg-red-950 px-1.5 py-0.5 rounded mr-1 mb-1 border border-red-800 text-red-300">
+                            ⛔ {r}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step-by-Step Directions */}
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
+                      {activeRouteTab === 'fastest' ? '⚡ Fastest Way Steps' : '📏 Shortest Way Steps'} ({activeRoute.steps?.length || 0} segments):
+                    </span>
+                    <div className="max-h-36 overflow-y-auto space-y-1 pr-1 font-mono text-[10px]">
+                      {activeRoute.steps?.map((step) => (
+                        <div key={step.step_number} className="p-1.5 rounded-lg bg-slate-950/60 border border-slate-800/80 flex items-center justify-between text-slate-300">
+                          <div className="truncate mr-2">
+                            <span className="text-cyan-400 mr-1.5">{step.step_number}.</span>
+                            <span>{step.road_name}</span>
+                          </div>
+                          <span className="text-slate-500 shrink-0">{step.distance_m}m</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 
@@ -440,6 +498,7 @@ export const UserDashboard: React.FC = () => {
               ].map((hub) => (
                 <button
                   key={hub.key}
+                  type="button"
                   onClick={() => setSelectedHub(hub.key)}
                   className={`px-2.5 py-1.5 rounded-lg text-left font-medium transition-all text-xs truncate ${
                     selectedHub === hub.key
@@ -459,9 +518,9 @@ export const UserDashboard: React.FC = () => {
           <CentralTrafficMap
             currentRole="USER"
             selectedHubKey={selectedHub}
-            onSelectEntity={setSelectedEntity}
+            onSelectEntity={handleMapEntityClick}
             roadConditions={roadConditions}
-            routeGeoJSON={routeResult?.geojson}
+            routeGeoJSON={activeRoute?.geojson}
           />
         </div>
       </main>
