@@ -430,6 +430,7 @@ export const AdminDashboard: React.FC = () => {
             currentRole="ADMIN"
             selectedHubKey={selectedHub}
             onSelectEntity={handleSelectMapEntity}
+            roadConditions={demoState?.road_conditions}
           />
         </div>
       </main>

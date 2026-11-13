@@ -23,6 +23,7 @@ interface CentralTrafficMapProps {
   currentRole: ActiveRole;
   selectedHubKey?: string;
   onSelectEntity?: (entity: SelectedMapEntity) => void;
+  roadConditions?: Record<string, { status: 'BLOCKED' | 'CONGESTED'; incident_id?: string }>;
 }
 
 const HYDERABAD_CENTER: [number, number] = [78.4350, 17.4200];
@@ -31,7 +32,8 @@ const INITIAL_ZOOM = 11.4;
 export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
   currentRole,
   selectedHubKey,
-  onSelectEntity
+  onSelectEntity,
+  roadConditions
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -208,6 +210,79 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
             ]
           ],
           'line-opacity': 0.95
+        }
+      });
+
+      // Layer 2.1: Congested Road Highlight Layer
+      map.addLayer({
+        id: 'roads-congested',
+        type: 'line',
+        source: 'hyderabad-roads',
+        filter: ['==', 'id', ''],
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#F59E0B',
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            10, 5,
+            14, 9,
+            16, 14
+          ],
+          'line-opacity': 0.95
+        }
+      });
+
+      // Layer 2.2: Blocked Road Glow Layer
+      map.addLayer({
+        id: 'roads-blocked-glow',
+        type: 'line',
+        source: 'hyderabad-roads',
+        filter: ['==', 'id', ''],
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#EF4444',
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            10, 8,
+            14, 15,
+            16, 22
+          ],
+          'line-opacity': 0.7,
+          'line-blur': 4
+        }
+      });
+
+      // Layer 2.3: Blocked Road Line Layer
+      map.addLayer({
+        id: 'roads-blocked',
+        type: 'line',
+        source: 'hyderabad-roads',
+        filter: ['==', 'id', ''],
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#EF4444',
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            10, 5,
+            14, 9,
+            16, 14
+          ],
+          'line-opacity': 1.0
         }
       });
 
@@ -443,6 +518,52 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
     }
   }, [layers.roads, layers.junctions, layers.basemapMode, layers.labels]);
 
+  // Dynamically update Blocked and Congested road highlight layers on map
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const applyRoadConditionFilters = () => {
+      const blockedIds: string[] = [];
+      const congestedIds: string[] = [];
+
+      if (roadConditions) {
+        Object.entries(roadConditions).forEach(([roadId, cond]) => {
+          if (cond && cond.status === 'BLOCKED') {
+            blockedIds.push(roadId);
+          } else if (cond && cond.status === 'CONGESTED') {
+            congestedIds.push(roadId);
+          }
+        });
+      }
+
+      if (map.getLayer('roads-blocked')) {
+        const blockedFilter = blockedIds.length > 0
+          ? ['in', 'id', ...blockedIds]
+          : ['==', 'id', ''];
+        map.setFilter('roads-blocked', blockedFilter as any);
+      }
+      if (map.getLayer('roads-blocked-glow')) {
+        const blockedFilter = blockedIds.length > 0
+          ? ['in', 'id', ...blockedIds]
+          : ['==', 'id', ''];
+        map.setFilter('roads-blocked-glow', blockedFilter as any);
+      }
+      if (map.getLayer('roads-congested')) {
+        const congestedFilter = congestedIds.length > 0
+          ? ['in', 'id', ...congestedIds]
+          : ['==', 'id', ''];
+        map.setFilter('roads-congested', congestedFilter as any);
+      }
+    };
+
+    if (map.isStyleLoaded()) {
+      applyRoadConditionFilters();
+    } else {
+      map.once('load', applyRoadConditionFilters);
+    }
+  }, [roadConditions]);
+
   // Handle Hub Teleportation / Fly-To
   useEffect(() => {
     const map = mapRef.current;
@@ -540,6 +661,16 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
           <div className="flex items-center gap-2">
             <span className="w-4 h-1 rounded bg-slate-400"></span>
             <span>Secondary Connecting Roads</span>
+          </div>
+          <div className="pt-1.5 border-t border-slate-800 flex flex-col gap-1.5">
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-1.5 rounded bg-red-500 shadow-sm shadow-red-500/80 animate-pulse"></span>
+              <span className="text-red-400 font-semibold">Blocked Road (Accident / Hazard)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-1.5 rounded bg-amber-400 shadow-sm shadow-amber-400/80"></span>
+              <span className="text-amber-400 font-semibold">Congested Flow (Bottleneck)</span>
+            </div>
           </div>
         </div>
       </div>
