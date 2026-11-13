@@ -15,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .api.map_routes import router as network_router
 from .api.auth_routes import router as auth_router
 from .api.demo_routes import router as demo_router
+from .api.emergency_routes import router as emergency_router
 app = FastAPI(
     title="UrbanFlow AI Backend API",
     description="Adaptive Multi-Agent Traffic Intelligence and Emergency Response Optimization System",
@@ -37,6 +38,7 @@ app.add_middleware(
 app.include_router(network_router)
 app.include_router(auth_router)
 app.include_router(demo_router)
+app.include_router(emergency_router)
 
 @app.get("/")
 def root():
