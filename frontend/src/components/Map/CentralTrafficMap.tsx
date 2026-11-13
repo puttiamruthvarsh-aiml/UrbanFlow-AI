@@ -19,12 +19,21 @@ import junctionsGeoJSON from '../../data/junctions_geo.json';
 import signalsGeoJSON from '../../data/traffic_signals_geo.json';
 import emergencyGeoJSON from '../../data/emergency_locations_geo.json';
 
+export interface MapLocationSelection {
+  name: string;
+  coordinates: [number, number];
+}
+
 interface CentralTrafficMapProps {
   currentRole: ActiveRole;
   selectedHubKey?: string;
   onSelectEntity?: (entity: SelectedMapEntity) => void;
   roadConditions?: Record<string, { status: 'BLOCKED' | 'CONGESTED'; incident_id?: string }>;
   routeGeoJSON?: any;
+  secondaryRouteGeoJSON?: any;
+  onMapLocationSelect?: (location: MapLocationSelection) => void;
+  startPointCoords?: [number, number] | null;
+  endPointCoords?: [number, number] | null;
 }
 
 const HYDERABAD_CENTER: [number, number] = [78.4350, 17.4200];
@@ -35,11 +44,20 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
   selectedHubKey,
   onSelectEntity,
   roadConditions,
-  routeGeoJSON
+  routeGeoJSON,
+  secondaryRouteGeoJSON,
+  onMapLocationSelect,
+  startPointCoords,
+  endPointCoords
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<maplibregl.Marker[]>([]);
+  const startMarkerRef = useRef<maplibregl.Marker | null>(null);
+  const endMarkerRef = useRef<maplibregl.Marker | null>(null);
+
+  const onMapLocationSelectRef = useRef(onMapLocationSelect);
+  onMapLocationSelectRef.current = onMapLocationSelect;
 
   const [layers, setLayers] = useState<LayerVisibilityState>({
     roads: true,
@@ -351,6 +369,47 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
         }
       });
 
+      // User Secondary Route Source and Layers (e.g. Shortest vs Fastest)
+      map.addSource('user-secondary-route-source', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        }
+      });
+
+      map.addLayer({
+        id: 'user-secondary-route-glow',
+        type: 'line',
+        source: 'user-secondary-route-source',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#10B981',
+          'line-width': 8,
+          'line-opacity': 0.35,
+          'line-blur': 3
+        }
+      });
+
+      map.addLayer({
+        id: 'user-secondary-route-line',
+        type: 'line',
+        source: 'user-secondary-route-source',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#34D399',
+          'line-width': 3.5,
+          'line-dasharray': [2, 2],
+          'line-opacity': 0.85
+        }
+      });
+
       // Layer 4: Intersections / Junctions
       map.addLayer({
         id: 'junctions-circle',
@@ -400,6 +459,13 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
         const entity: SelectedMapEntity = { type: 'road', data: props };
         setSelectedEntity(entity);
         if (onSelectEntity) onSelectEntity(entity);
+
+        if (onMapLocationSelectRef.current && props.name) {
+          onMapLocationSelectRef.current({
+            name: props.name,
+            coordinates: [e.lngLat.lng, e.lngLat.lat]
+          });
+        }
       });
 
       // Cursor changes on hover
@@ -420,9 +486,19 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
         setSelectedEntity(entity);
         if (onSelectEntity) onSelectEntity(entity);
 
+        const coords = feature.geometry.type === 'Point'
+          ? (feature.geometry as any).coordinates as [number, number]
+          : [e.lngLat.lng, e.lngLat.lat] as [number, number];
+
+        if (onMapLocationSelectRef.current) {
+          onMapLocationSelectRef.current({
+            name: props.name || props.id,
+            coordinates: coords
+          });
+        }
+
         // Center smoothly on junction
         if (feature.geometry.type === 'Point') {
-          const coords = (feature.geometry as any).coordinates as [number, number];
           map.easeTo({ center: coords, zoom: Math.max(map.getZoom(), 13.5), duration: 600 });
         }
       });
@@ -432,6 +508,22 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
       });
       map.on('mouseleave', 'junctions-circle', () => {
         map.getCanvas().style.cursor = '';
+      });
+
+      // General Map Click Listener for placing Start & Destination anywhere
+      map.on('click', (e) => {
+        const circleFeatures = map.queryRenderedFeatures(e.point, { layers: ['junctions-circle'] });
+        if (circleFeatures && circleFeatures.length > 0) return;
+
+        const roadFeatures = map.queryRenderedFeatures(e.point, { layers: ['roads-layer'] });
+        if (roadFeatures && roadFeatures.length > 0) return;
+
+        if (onMapLocationSelectRef.current) {
+          onMapLocationSelectRef.current({
+            name: `${e.lngLat.lat.toFixed(5)}, ${e.lngLat.lng.toFixed(5)}`,
+            coordinates: [e.lngLat.lng, e.lngLat.lat]
+          });
+        }
       });
     });
 
@@ -680,6 +772,80 @@ export const CentralTrafficMap: React.FC<CentralTrafficMapProps> = ({
       map.once('load', applyRoute);
     }
   }, [routeGeoJSON]);
+
+  // Dynamically update Secondary/Alternative Route GeoJSON on map
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const applySecondaryRoute = () => {
+      const source = map.getSource('user-secondary-route-source') as maplibregl.GeoJSONSource;
+      if (!source) return;
+
+      if (secondaryRouteGeoJSON && (secondaryRouteGeoJSON.features?.length > 0 || secondaryRouteGeoJSON.type === 'Feature')) {
+        const featCollection = secondaryRouteGeoJSON.type === 'FeatureCollection'
+          ? secondaryRouteGeoJSON
+          : { type: 'FeatureCollection', features: [secondaryRouteGeoJSON] };
+        source.setData(featCollection);
+      } else {
+        source.setData({ type: 'FeatureCollection', features: [] });
+      }
+    };
+
+    if (map.isStyleLoaded()) {
+      applySecondaryRoute();
+    } else {
+      map.once('load', applySecondaryRoute);
+    }
+  }, [secondaryRouteGeoJSON]);
+
+  // Dynamically render Start and Destination Beacon Markers on Map
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    if (startMarkerRef.current) {
+      startMarkerRef.current.remove();
+      startMarkerRef.current = null;
+    }
+    if (startPointCoords && startPointCoords.length === 2 && !isNaN(startPointCoords[0]) && !isNaN(startPointCoords[1])) {
+      const el = document.createElement('div');
+      el.className = 'flex items-center justify-center cursor-pointer pointer-events-auto';
+      el.innerHTML = `
+        <div class="relative flex items-center justify-center group">
+          <span class="animate-ping absolute inline-flex h-7 w-7 rounded-full bg-emerald-400 opacity-75"></span>
+          <div class="relative px-2.5 py-1 rounded-full bg-emerald-950/90 border-2 border-emerald-400 text-emerald-300 font-black font-mono text-[10px] shadow-lg shadow-emerald-500/50 flex items-center gap-1 backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            START
+          </div>
+        </div>
+      `;
+      startMarkerRef.current = new maplibregl.Marker({ element: el, anchor: 'center' })
+        .setLngLat(startPointCoords)
+        .addTo(map);
+    }
+
+    if (endMarkerRef.current) {
+      endMarkerRef.current.remove();
+      endMarkerRef.current = null;
+    }
+    if (endPointCoords && endPointCoords.length === 2 && !isNaN(endPointCoords[0]) && !isNaN(endPointCoords[1])) {
+      const el = document.createElement('div');
+      el.className = 'flex items-center justify-center cursor-pointer pointer-events-auto';
+      el.innerHTML = `
+        <div class="relative flex items-center justify-center group">
+          <span class="animate-ping absolute inline-flex h-7 w-7 rounded-full bg-red-500 opacity-75"></span>
+          <div class="relative px-2.5 py-1 rounded-full bg-red-950/90 border-2 border-red-500 text-red-300 font-black font-mono text-[10px] shadow-lg shadow-red-500/50 flex items-center gap-1 backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+            DEST
+          </div>
+        </div>
+      `;
+      endMarkerRef.current = new maplibregl.Marker({ element: el, anchor: 'center' })
+        .setLngLat(endPointCoords)
+        .addTo(map);
+    }
+  }, [startPointCoords, endPointCoords]);
 
   const handleToggleLayer = (key: keyof LayerVisibilityState) => {
     setLayers(prev => ({ ...prev, [key]: !prev[key] }));

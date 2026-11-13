@@ -8,6 +8,7 @@ import os
 import math
 import json
 import heapq
+import re
 from typing import Dict, List, Tuple, Any, Optional, Set
 from pydantic import BaseModel
 
@@ -128,22 +129,30 @@ class DynamicRoutingEngine:
         """
         Resolves a user-provided string to a valid junction node ID.
         Supports:
-        - Exact node ID (e.g. 'node_cyber_towers')
-        - Coordinates string (e.g. '17.45041,78.38082' or '78.38082, 17.45041')
-        - Case-insensitive substring match against node names, IDs, or areas
+        1. Exact node ID ('node_cyber_towers')
+        2. Geographic coordinates ('17.4504, 78.3808')
+        3. Exact and substring junction name matching
+        4. Token-based multi-field matching across name, area, node ID, and connected road names
+        5. Connected road name matching
         """
+        if not query or not isinstance(query, str):
+            return None
+
         q = query.strip()
+        if not q:
+            return None
+
+        # 1. Exact node ID match
         if q in self.nodes:
             return q
 
-        # Check for coordinate format "lat, lon"
+        # 2. Check for coordinate format "lat, lon" or "lon, lat"
         if "," in q:
             parts = [p.strip() for p in q.split(",")]
             if len(parts) == 2:
                 try:
                     val1 = float(parts[0])
                     val2 = float(parts[1])
-                    # Determine which is lat and which is lon
                     if 17.0 <= val1 <= 18.0:
                         lat, lon = val1, val2
                     elif 17.0 <= val2 <= 18.0:
@@ -154,21 +163,70 @@ class DynamicRoutingEngine:
                 except ValueError:
                     pass
 
-        # Case-insensitive search on name, area, id
-        q_lower = q.lower()
-        # 1. Exact match on name
+        q_clean = q.lower()
+
+        # 3. Exact match on name
         for nid, data in self.nodes.items():
-            if data["name"].lower() == q_lower:
+            if data["name"].lower() == q_clean:
                 return nid
 
-        # 2. Substring match on name
+        # 4. Substring match on name (both directions)
         for nid, data in self.nodes.items():
-            if q_lower in data["name"].lower():
+            name_low = data["name"].lower()
+            if q_clean in name_low or name_low in q_clean:
                 return nid
 
-        # 3. Substring match on area or id
+        # 5. Token-based multi-field scoring across name, area, id, and road names
+        tokens = [t for t in re.split(r'[^a-zA-Z0-9]+', q_clean) if len(t) >= 2]
+        stopwords = {'the', 'junction', 'junc', 'intersection', 'road', 'rd', 'x', 'cross', 'crossroads', 'roads', 'circle', 'entry', 'station'}
+        content_tokens = [t for t in tokens if t not in stopwords] or tokens
+
+        best_nid = None
+        best_score = 0
+
         for nid, data in self.nodes.items():
-            if q_lower in data["area"].lower() or q_lower in nid.lower():
+            score = 0
+            name_lower = data["name"].lower()
+            area_lower = data.get("area", "").lower()
+            id_lower = nid.lower()
+
+            matched_content = 0
+            for t in content_tokens:
+                if t in name_lower:
+                    score += 4
+                    matched_content += 1
+                elif t in area_lower:
+                    score += 3
+                    matched_content += 1
+                elif t in id_lower:
+                    score += 2
+                    matched_content += 1
+
+            for edge in self.edges_by_source.get(nid, []):
+                edge_name = edge.get("name", "").lower()
+                for t in content_tokens:
+                    if t in edge_name:
+                        score += 1
+
+            if matched_content == len(content_tokens):
+                score += 5  # Bonus for matching all tokens
+
+            if score > best_score:
+                best_score = score
+                best_nid = nid
+
+        if best_score > 0:
+            return best_nid
+
+        # 6. Check edge/road names directly
+        for eid, edge in self.edges_by_id.items():
+            edge_name = edge.get("name", "").lower()
+            if q_clean in edge_name or edge_name in q_clean:
+                return edge["source"]
+
+        # 7. Substring match on area or id
+        for nid, data in self.nodes.items():
+            if q_clean in data.get("area", "").lower() or q_clean in nid.lower():
                 return nid
 
         return None
