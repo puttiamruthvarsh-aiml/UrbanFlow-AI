@@ -3,7 +3,8 @@ import os
 from datetime import datetime, timedelta, timezone
 
 import jwt
-from pwdlib import PasswordHash
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError, VerificationError, InvalidHashError
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
@@ -15,7 +16,24 @@ SECRET_KEY = os.getenv(
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 8
 
-password_hash = PasswordHash.recommended()
+_ph = PasswordHasher()
+bearer_scheme = HTTPBearer(auto_error=False)
+
+
+class _PasswordHashCompat:
+    """Drop-in replacement for pwdlib.PasswordHash using argon2-cffi."""
+
+    def hash(self, password: str) -> str:
+        return _ph.hash(password)
+
+    def verify(self, password: str, hashed: str) -> bool:
+        try:
+            return _ph.verify(hashed, password)
+        except (VerifyMismatchError, VerificationError, InvalidHashError):
+            return False
+
+
+password_hash = _PasswordHashCompat()
 bearer_scheme = HTTPBearer(auto_error=False)
 
 # Temporary demo accounts
